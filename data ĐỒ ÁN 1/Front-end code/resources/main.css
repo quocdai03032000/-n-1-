@@ -1,0 +1,24 @@
+.navbar{
+    background-image: linear-gradient(0, #110394, #25f509);
+}
+.img-logo{
+     width: 110px; 
+     margin-left: 20px;
+     padding-top: 0;
+     padding-bottom: 0; 
+}
+.mr-3{
+    margin: 3px 30px 3px;
+}
+.search-input{
+    padding-top: 10px;
+    padding-right: 250px;
+}
+.icon-user{
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    padding-left: 5.5px;
+    padding-top: 4.5px;
+    border-radius: 50%;
+}
