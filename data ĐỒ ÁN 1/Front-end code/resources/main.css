@@ -1,5 +1,6 @@
+/* navbar */
 .navbar{
-    background-image: linear-gradient(0, #110394, #25f509);
+    background-image: linear-gradient(0, #682004, #25f509);
 }
 .img-logo{
      width: 110px; 
@@ -10,9 +11,16 @@
 .mr-3{
     margin: 3px 30px 3px;
 }
+.form_input{
+    margin-right: 50px;
+}
 .search-input{
     padding-top: 10px;
     padding-right: 250px;
+}
+.nav_login{
+    position: relative;
+    right:10px ;
 }
 .icon-user{
     background-color: white;
@@ -21,4 +29,19 @@
     padding-left: 5.5px;
     padding-top: 4.5px;
     border-radius: 50%;
+}
+/* footer */
+.footer_main{
+    margin:0 auto;
+    width: auto;
+    height:auto;
+    background-color: #0042A6;
+}
+.item_logo{
+    width: 150px;
+    height: 150px;
+}
+.item_detail_huflit{
+    position: absolute;
+    right: 30px;
 }
