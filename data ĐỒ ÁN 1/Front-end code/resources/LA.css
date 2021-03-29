@@ -38,7 +38,7 @@ body {
     margin-top: 3px ;
     margin-left: 5px;
     border-radius: 5px;
-    background-color: rgb(197, 195, 194);
+    background-color: rgb(151, 148, 147);
     line-height: 1em;
 }
 
@@ -64,14 +64,11 @@ body {
 /*form thứ 2 form search*/
 .form-search{
     height: 70px;
-    width: 1550px;
+    width: auto;
     border-radius: 7px;
     margin:1px 6px 1px 6px;
-    background-color: rgb(139, 139, 143);
-}
-
-.full-search{
-
+    background-color: rgb(202, 202, 206);
+   
 }
 
  .search-select{
@@ -79,16 +76,49 @@ body {
      height: 30px;
      width: 150px;
      border-radius: 4px;
-    
+    background-color: rgb(191, 192, 192);
  }
 
  .search{
      padding-top: 20px;
-     padding-left: 250px;
+     padding-left: 290px;
+     display: flex;
+     flex-direction: row;
  }
+ @media (max-width:1200px){
+    .search {
+        text-align: center;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+    }
+    .form-search{
+        text-align: center;
+        width: auto;
+    }
+    #textSearch{
+        width: auto;
+    }
+
+}
+
+ @media (max-width:960px){
+    .search ,.form-search{
+        padding-left: 0px;
+        padding-top: 0px;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+    #textSearch{
+        width: auto;
+    }
+
+}
+
  #textSearch{
     height: 30px;
-    width: 550px;
+    width: auto;
     float: left;
  }
 
@@ -131,24 +161,43 @@ body {
 .Grid{
     height: auto;
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
+@media (max-width:960px){
+    .Grid{
+        flex-direction: column;
+    }
+  }
+
 .Grid-item{
     background-color: rgb(240, 240, 240);
     height: auto;
-    width: 30%;
     float: left;
     border: 1px solid rgb(0, 0, 0);
     margin: 0px 20px 0px 30px;
+    display: flex;
+    flex-direction: row;
 }
+@media (max-width:960px){
+    .item-item{
+        flex-direction: row;
+    }
+    .item-img{
+        height: auto;
+        width: auto;
+    }
+    .item-text-button{
+        margin-left: 0px;
+    }
+  }
 
 .item-item{
-    background-color: cornsilk;
+    background-color: rgb(248, 248, 248);
     border: 1px solid red ;
-    
     height: auto;
     width: 100%;
 }
-
 .item-img{
     width: 50%;
     float: left;   
@@ -178,7 +227,7 @@ body {
     width: 100px;
     background-color: rgb(41, 173, 235);
     border-radius: 12px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
 .item-text-button:hover{
     background-color: rgb(3, 20, 97);
