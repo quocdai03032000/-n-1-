@@ -8,4 +8,5 @@
         // doc duong dan cua du lieu
         reader.readAsDataURL(imageUploader.files[0]);
     }
+
 }
