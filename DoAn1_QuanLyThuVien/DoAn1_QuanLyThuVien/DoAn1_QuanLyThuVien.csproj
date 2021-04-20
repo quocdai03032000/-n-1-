@@ -150,6 +150,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\ADMIN\ADMINAreaRegistration.cs" />
+    <Compile Include="Areas\USER\Controllers\MainController.cs" />
+    <Compile Include="Areas\USER\USERAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SachController.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,6 +182,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\img\bg.jpg" />
+    <Content Include="Assets\img\logoHuflit.png" />
+    <Content Include="Assets\User\style.css" />
+    <Content Include="Assets\User\style_Layout.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -207,6 +214,14 @@
     <Content Include="Models\QuanLyThuVienModel.edmx.diagram">
       <DependentUpon>QuanLyThuVienModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\ADMIN\Views\web.config" />
+    <Content Include="Areas\USER\Views\web.config" />
+    <Content Include="Areas\USER\Views\Shared\_Layout_User_1.cshtml" />
+    <Content Include="Areas\USER\Views\Shared\_Layout_User_2.cshtml" />
+    <Content Include="Areas\USER\Views\Main\Index.cshtml" />
+    <Content Include="Areas\USER\Views\Main\Register.cshtml" />
+    <Content Include="Areas\USER\Views\Main\Contact.cshtml" />
+    <Content Include="Areas\USER\Views\Main\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -240,6 +255,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ADMIN\Controllers\" />
+    <Folder Include="Areas\ADMIN\Models\" />
+    <Folder Include="Areas\ADMIN\Views\Shared\" />
+    <Folder Include="Areas\USER\Models\" />
+    <Folder Include="Assets\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
