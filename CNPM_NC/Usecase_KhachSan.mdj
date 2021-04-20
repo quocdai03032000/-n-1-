@@ -6661,11 +6661,11 @@
 												"$ref": "AAAAAAF4jkeZpfIgzZ8="
 											},
 											"font": "Arial;13;1",
-											"left": 648,
+											"left": 657.5,
 											"top": 1131.5,
-											"width": 117,
+											"width": 165,
 											"height": 13,
-											"text": "Quản Lí TK Partner"
+											"text": "Quản Lí TK Chủ khách sạn"
 										},
 										{
 											"_type": "LabelView",
@@ -6696,9 +6696,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 643,
+									"left": 652.5,
 									"top": 1124.5,
-									"width": 128.4599609375,
+									"width": 175.4072265625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF4jkeZpfIhqlk="
@@ -6798,7 +6798,7 @@
 							"containerChangeable": true,
 							"left": 616,
 							"top": 1120,
-							"width": 181,
+							"width": 248,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF4jkeZpfIgzZ8="
@@ -6860,11 +6860,11 @@
 												"$ref": "AAAAAAF4jkgW5/K6IBk="
 											},
 											"font": "Arial;13;1",
-											"left": 660.5,
+											"left": 670,
 											"top": 1051.5,
-											"width": 101,
+											"width": 147,
 											"height": 13,
-											"text": "Quản Lí TK User"
+											"text": "Quản Lí TK Người dùng"
 										},
 										{
 											"_type": "LabelView",
@@ -6895,9 +6895,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 655.5,
+									"left": 665,
 									"top": 1044.5,
-									"width": 111.84814453125,
+									"width": 157.9130859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF4jkgW5/K7PVY="
@@ -6997,7 +6997,7 @@
 							"containerChangeable": true,
 							"left": 632,
 							"top": 1040,
-							"width": 158,
+							"width": 223,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAF4jkgW5/K6IBk="
@@ -11451,7 +11451,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 585,
+									"left": 602,
 									"top": 1101,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -11471,7 +11471,7 @@
 										"$ref": "AAAAAAF4kamVnH2jQcE="
 									},
 									"font": "Arial;13;0",
-									"left": 554,
+									"left": 571,
 									"top": 1115,
 									"width": 53.49169921875,
 									"height": 13,
@@ -11494,7 +11494,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 596,
+									"left": 611,
 									"top": 1072,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -11513,7 +11513,7 @@
 								"$ref": "AAAAAAF4jkeZpfIfPkM="
 							},
 							"lineStyle": 1,
-							"points": "659:1119;523:1067",
+							"points": "685:1119;530:1067",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF4kamVnH2mqcc="
@@ -12298,7 +12298,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF4jjHKLuRhSXw="
 					},
-					"name": "Quản Lí TK Partner",
+					"name": "Quản Lí TK Chủ khách sạn",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
@@ -12334,7 +12334,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF4jjHKLuRhSXw="
 					},
-					"name": "Quản Lí TK User",
+					"name": "Quản Lí TK Người dùng",
 					"ownedElements": [
 						{
 							"_type": "UMLExtend",
