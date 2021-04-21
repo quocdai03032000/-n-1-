@@ -25,7 +25,15 @@ namespace DoAn1_QuanLyThuVien.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AccountADMIN> AccountADMINs { get; set; }
+        public virtual DbSet<Account_Admin> Account_Admin { get; set; }
+        public virtual DbSet<DangKyTheTV> DangKyTheTVs { get; set; }
+        public virtual DbSet<DauSach> DauSaches { get; set; }
+        public virtual DbSet<DKyMuonSach> DKyMuonSaches { get; set; }
         public virtual DbSet<Sach> Saches { get; set; }
+        public virtual DbSet<Sach_Dang_Muon> Sach_Dang_Muon { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TheThuVien> TheThuViens { get; set; }
+        public virtual DbSet<TinhTrang_TheTV> TinhTrang_TheTV { get; set; }
+        public virtual DbSet<TinhTrangSach> TinhTrangSaches { get; set; }
     }
 }

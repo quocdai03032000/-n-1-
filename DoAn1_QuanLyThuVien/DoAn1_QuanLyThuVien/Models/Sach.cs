@@ -14,11 +14,23 @@ namespace DoAn1_QuanLyThuVien.Models
     
     public partial class Sach
     {
-        public int MaSach { get; set; }
-        public string TenSach { get; set; }
-        public string TenTacGia { get; set; }
-        public string TheLoai { get; set; }
-        public Nullable<int> NamXuatBan { get; set; }
-        public string NXB { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sach()
+        {
+            this.DKyMuonSaches = new HashSet<DKyMuonSach>();
+            this.Sach_Dang_Muon = new HashSet<Sach_Dang_Muon>();
+        }
+    
+        public int SoKiemSoat { get; set; }
+        public Nullable<int> MaDauSach { get; set; }
+        public Nullable<int> MaTinhTrangSach { get; set; }
+        public string GhiChu { get; set; }
+    
+        public virtual DauSach DauSach { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DKyMuonSach> DKyMuonSaches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sach_Dang_Muon> Sach_Dang_Muon { get; set; }
+        public virtual TinhTrangSach TinhTrangSach { get; set; }
     }
 }

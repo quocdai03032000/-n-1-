@@ -151,14 +151,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ADMIN\ADMINAreaRegistration.cs" />
+    <Compile Include="Areas\ADMIN\Controllers\MainController.cs" />
     <Compile Include="Areas\USER\Controllers\MainController.cs" />
     <Compile Include="Areas\USER\USERAreaRegistration.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SachController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountADMIN.cs">
+    <Compile Include="Models\Account_Admin.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DangKyTheTV.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DauSach.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DKyMuonSach.cs">
       <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QuanLyThuVienModel.Context.cs">
@@ -179,9 +187,26 @@
     <Compile Include="Models\Sach.cs">
       <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sach_Dang_Muon.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TheThuVien.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TinhTrangSach.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TinhTrang_TheTV.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Admin\style.css" />
+    <Content Include="Assets\Admin\styleLogin.css" />
     <Content Include="Assets\img\bg.jpg" />
     <Content Include="Assets\img\logoHuflit.png" />
     <Content Include="Assets\User\style.css" />
@@ -207,13 +232,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\QuanLyThuVienModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyThuVienModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QuanLyThuVienModel.edmx.diagram">
-      <DependentUpon>QuanLyThuVienModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\ADMIN\Views\web.config" />
     <Content Include="Areas\USER\Views\web.config" />
     <Content Include="Areas\USER\Views\Shared\_Layout_User_1.cshtml" />
@@ -222,6 +240,17 @@
     <Content Include="Areas\USER\Views\Main\Register.cshtml" />
     <Content Include="Areas\USER\Views\Main\Contact.cshtml" />
     <Content Include="Areas\USER\Views\Main\Login.cshtml" />
+    <Content Include="Areas\ADMIN\Views\Shared\_Layout.cshtml" />
+    <EntityDeploy Include="Models\QuanLyThuVienModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyThuVienModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuanLyThuVienModel.edmx.diagram">
+      <DependentUpon>QuanLyThuVienModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\ADMIN\Views\Main\Index.cshtml" />
+    <Content Include="Areas\ADMIN\Views\Main\Main.cshtml" />
+    <Content Include="Areas\ADMIN\Views\Main\DauSach.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -244,22 +273,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Sach\Index.cshtml" />
-    <Content Include="Views\Sach\Create.cshtml" />
-    <Content Include="Views\Sach\Details.cshtml" />
-    <Content Include="Views\Sach\Edit.cshtml" />
-    <Content Include="Views\Sach\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\ADMIN\Controllers\" />
     <Folder Include="Areas\ADMIN\Models\" />
-    <Folder Include="Areas\ADMIN\Views\Shared\" />
     <Folder Include="Areas\USER\Models\" />
-    <Folder Include="Assets\Admin\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

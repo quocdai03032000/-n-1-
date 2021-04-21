@@ -283,6 +283,6 @@ C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVi
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\Microsoft.AI.Web.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.dll
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.pdb
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache
