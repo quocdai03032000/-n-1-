@@ -1,0 +1,932 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="LA.css">
+    <title>Main_interface</title>
+</head>
+<style>
+    /* navbar */
+
+    .navbar {
+        background-image: linear-gradient(0, #636060, #000000);
+    }
+
+    .img-logo {
+        width: 110px;
+        margin-left: 20px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .mr-3 {
+        margin: 3px 30px 3px;
+    }
+
+    .form_input {
+        position: absolute;
+        right: 250px;
+    }
+
+    .search-input {
+        padding-top: 10px;
+        padding-right: 250px;
+    }
+
+    .nav_login {
+        position: relative;
+        right: 10px;
+    }
+
+    .nav-user_login {
+        display: inline-flex;
+    }
+
+    .icon-user {
+        background-color: rgb(104, 101, 101);
+        height: 25px;
+        width: 25px;
+        padding-left: 5.5px;
+        padding-top: 4.5px;
+        border-radius: 50%;
+    }
+
+    .nav-separator {
+        content: "";
+        display: block;
+        position: absolute;
+        border-right: #fb9086 1px solid;
+        top: 30px;
+        height: 20px;
+        right: 15px;
+        transform: translateY(-100%);
+    }
+
+
+    /* footer */
+
+    .footer_main {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        list-style: none;
+        background-color: #0042A6;
+    }
+
+    .item_logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .item_detail_huflit {
+        position: absolute;
+        right: 100px;
+    }
+
+    .item_detail_list {
+        display: flex;
+        line-height: 5px;
+    }
+
+    .item_detail_text {
+        text-decoration: wavy;
+        color: #f5f5f5;
+        font-size: 18px;
+        margin-left: 14px;
+    }
+
+
+    /* Container */
+
+    .container {
+        margin: 30px 0;
+    }
+
+    .item-name_text {
+        color: #3e7cd8;
+        font-size: 40px;
+        text-align: center;
+    }
+    body {
+    font-family: Arial;
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.Center {
+    height: auto;
+    width: auto;
+}
+
+.form-LienHe {
+    height: 420px;
+    width: 1300px;
+    margin-left: 130px;
+    margin-top: 30px;
+    background-color: rgb(206, 207, 203);
+    padding: 15px;
+}
+
+.h4 {
+    color: rgb(41, 173, 235);
+}
+
+.bottom-hr {
+    line-height: 1.5em;
+}
+
+
+/*-------CSS Tra Cuu---------------------------------------------*/
+
+
+/*form đầu tiên form xin chào*/
+
+#inputxc {
+    border-radius: 10px;
+    background-color: rgb(51, 145, 233);
+}
+
+#inputxc:hover {
+    background-color: rgb(21, 5, 168);
+    color: white;
+}
+
+
+/*form thứ 2 form search*/
+
+.form-search {
+    height: 70px;
+    width: auto;
+    border-radius: 7px;
+    margin: 1px 6px 1px 6px;
+    background-color: rgb(202, 202, 206);
+}
+
+.search-select {
+    float: left;
+    height: 30px;
+    width: 150px;
+    border-radius: 4px;
+    background-color: rgb(191, 192, 192);
+}
+
+.search {
+    padding-top: 20px;
+    padding-left: 290px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#textSearch {
+    height: 30px;
+    width: 500px;
+    float: left;
+}
+
+#buttonSearch {
+    height: 32px;
+    width: 70px;
+    background-color: rgb(255, 185, 35);
+}
+
+#buttonSearch:hover {
+    background-color: rgb(231, 127, 8);
+}
+
+#buttonSearch img {
+    display: block;
+    width: 49px;
+    height: 30px;
+    text-align: center;
+    margin: auto;
+}
+
+
+/*----chỉnh images của sách-------------------------------------------_*/
+
+.item-img-book {
+    height: 350px;
+    width: 230px;
+}
+
+
+/*trợ giúp tìm kiếm*/
+
+.TroGiupTimKiem {
+    background-color: rgb(255, 255, 255);
+    margin-top: 2px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 2px 5px 2px 5px;
+    border-style: solid;
+    border-color: black;
+    line-height: 1em;
+}
+
+
+/* Gợi ý */
+
+.GoiY h5 {
+    color: rgb(24, 77, 0);
+    margin-left: 45px;
+    margin-top: 7px;
+}
+
+.Grid {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Grid-item {
+    background-color: rgb(240, 240, 240);
+    height: auto;
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0px 20px 0px 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.item-item {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid red;
+    height: auto;
+    width: 100%;
+}
+
+.item-img {
+    width: 50%;
+    float: left;
+}
+
+.item-img img {
+    padding: 4px;
+}
+
+.item-text {
+    width: 50%;
+    float: right;
+    background-color: rgb(248, 246, 250);
+    padding: 5px;
+}
+
+.item-text h3 {
+    text-align: center;
+}
+
+#box-MoTa {
+    height: 120px;
+    width: auto;
+    border: 1px hidden rgb(32, 32, 32);
+    overflow: scroll;
+}
+
+.item-text-button {
+    height: 30px;
+    width: 100px;
+    background-color: rgb(41, 173, 235);
+    border-radius: 12px;
+    margin-left: 30px;
+}
+
+.item-text-button:hover {
+    background-color: rgb(3, 20, 97);
+    color: lightgrey;
+}
+
+
+/*-------CSS Thông Tin Sản Phẩm---------------------------------------------*/
+
+.Center h1 {
+    text-align: center;
+    font-weight: 300;
+    font-family: inherit;
+    padding: 20px;
+    width: auto;
+}
+
+.Center h1 img {
+    height: 50px;
+    padding-right: 10px;
+}
+
+.Grid-ThongTinSanPham {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Grid-left-img {
+    width: 30%;
+    float: left;
+}
+
+.Grid-left-img img {
+    height: auto;
+    width: auto;
+    padding: 15px;
+    padding-left: 100px;
+}
+
+.Grid-rigth-content {
+    width: 70%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+}
+
+.Grid-rigth-content form {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+
+/*---Duwosi thẻ hr 3 button lục tím cam--------------------------*/
+
+.bottom_hr {
+    width: auto;
+    height: auto;
+}
+
+.parameter {
+    margin-left: 820px;
+}
+
+.green {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 120px;
+    text-align: center;
+    background-color: green;
+    padding: 4px;
+    float: left;
+    margin-right: 13px;
+}
+
+.blue {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 120px;
+    text-align: center;
+    background-color: rgba(4, 148, 243, 0.452);
+    padding: 4px;
+    float: left;
+    margin-right: 13px;
+}
+
+.oranges {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 180px;
+    text-align: center;
+    background-color: rgb(241, 129, 23);
+    padding: 4px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+/*---table trên poter--------------------------*/
+
+.form-label {
+    width: 30%;
+    float: left;
+    text-align: end;
+}
+
+.form-input {
+    width: 70%;
+}
+
+.form-input #fluotXem {
+    width: 100px;
+}
+
+#star {
+    margin-bottom: 0px;
+}
+
+#star:visited {
+    background-image: url(./img/star-yellow.png);
+}
+
+#star-soluong {
+    width: 30px;
+}
+
+#span_soLuong_like {
+    width: 30px;
+}
+
+#star img {
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+}
+
+.button-thongtinsanpham {
+    margin-left: 0px;
+}
+
+#btn_QuayLai {
+    margin-left: 0px;
+    background-color: rgb(91, 153, 235);
+    color: black;
+    width: 100px;
+}
+
+#btn_QuayLai:hover {
+    background-color: rgb(9, 10, 82);
+    color: linen;
+}
+
+#btn_Muon {
+    margin-left: 10px;
+    background-color: rgb(91, 153, 235);
+    color: black;
+    width: 100px;
+}
+
+#btn_Muon:hover {
+    background-color: rgb(9, 10, 82);
+    color: linen;
+}
+
+.Center hr {
+    height: 2px;
+    background-color: black;
+    margin: 10px;
+}
+
+
+/*code chừa đễ viết phần chưa biết :))*/
+
+.bottom_hr {
+    width: auto;
+    height: 60px;
+}
+
+.table table {
+    width: 800px;
+    text-align: center;
+    margin-left: 280px;
+}
+
+#tr_top {
+    background-color: rgb(151, 149, 147);
+}
+
+#tr_bottom {
+    background-color: rgb(218, 217, 216);
+}
+
+.table {
+    width: auto;
+    display: flex;
+}
+
+
+
+/*---Main_interface------------------*/
+
+.Content_Top {
+    float: inline;
+    padding: 10px;
+    margin-left: 20px 0px 0px 10px;
+}
+
+.Content_Top h4 {
+    float: left;
+}
+
+.Content_Top button {
+    border-radius: 20em / 10em;
+    margin: 0px 5px 0px 5px;
+}
+
+.Content_Top button:hover {
+    background-color: rgb(233, 111, 23);
+}
+
+
+/*Ther Grid */
+
+.GridBox_Top {
+    width: 100%;
+    height: auto;
+}
+
+.Grid-item-Main {
+    width: 30%;
+    height: auto;
+    float: left;
+    margin: 24px;
+}
+
+.item-item-main {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid red;
+    height: auto;
+    width: 100%;
+}
+
+.item-img-main {
+    width: 50%;
+    float: left;
+}
+
+.item-img-main img {
+    padding: 4px;
+}
+
+.item-text-main {
+    width: 50%;
+    float: right;
+    background-color: rgb(248, 246, 250);
+    padding: 5px;
+}
+
+
+/*Content Bottom*/
+
+.Content_Bottom {
+    float: inline;
+    padding: 10px;
+    margin-left: 20px 0px 0px 10px;
+}
+
+.Content_Bottom h4 {
+    float: left;
+}
+
+.Content_Bottom button {
+    border-radius: 20em / 10em;
+    margin: 0px 5px 0px 5px;
+}
+
+.Content_Bottom button:hover {
+    background-color: rgb(233, 111, 23);
+}
+
+
+/*button Thêm xóa sửa trong thẻ Grid*/
+
+.content_button {
+    height: 210px;
+}
+
+.content_button div {
+    padding-top: 50px;
+}
+
+.content_button button {
+    margin: 5px 5px 5px 90px;
+}
+
+
+/*----CSS ADDBOOK ____________*/
+
+#btn_them {
+    margin-left: 10px;
+    background-color: rgb(91, 153, 235);
+    color: black;
+    width: 100px;
+}
+
+#btn_them:hover {
+    background-color: blue;
+    color: white;
+}
+
+.Grid-left-img-add {
+    width: 30%;
+    float: left;
+}
+
+.Center-h1 {
+    text-align: center;
+    color: rgb(155, 3, 3);
+    margin: 10px;
+}
+
+.Center_add_edit_add {
+    background-image: url(./img/pexels-stanislav-kondratiev-2908984.jpg);
+    background-position: center center;
+    background-size: contain;
+    z-index: -1;
+}
+
+.Form {
+    width: 900px;
+    height: 380px;
+    margin-left: 310px;
+    border-style: none solid none solid;
+    opacity: 0.7;
+    background-color: rgb(122, 119, 119);
+}
+
+.Grid-Add {
+    width: 100%;
+    padding: 7px;
+    z-index: -1;
+}
+
+.Grid-left-img-add {
+    text-align: center;
+    width: 30%;
+    border: none solid none none;
+}
+
+.Grid-left-img-add img {
+    height: auto;
+    width: auto;
+    margin: 0px;
+    opacity: none;
+}
+
+.Grid-rigth-content-add form {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    opacity: none;
+}
+
+.form-label-add {
+    width: 30%;
+    float: left;
+    text-align: end;
+    z-index: 1;
+}
+
+.form-label-add label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.form-input-add {
+    width: 70%;
+}
+
+.form-input-add input {
+    height: 30px;
+    width: 400px;
+}
+
+.Center_add_edit_delete {
+    height: auto;
+    width: auto;
+    background-color: bisque;
+}
+</style>
+<div class="media">
+    <img class="mr-3 img-logo" src="img/HUFLIT_logo (1).png" alt="Generic placeholder image">
+    <div class="media-body">
+        <h5 class="mt-3" style="color: #005595;"> <b>TRƯỜNG ĐẠI HỌC NGOẠI NGỮ - TIN HỌC TPHCM</b></h5>
+        <h5 style="text-decoration: wavy; color: #005595; margin-top: -10px; font-size: 18px; margin-left: 14px;"><i>Đoàn kết - Hợp tác - Kỷ cương - Chất lượng - Phát triển</i> </h5>
+    </div>
+</div>
+
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <div class="nav-item_home" style="display: flex;">
+                            <a class="nav-link" href="index.html" style=" font-size: 20px; margin-left: 25px;"><i class="fas fa-home"></i> <i><b>Trang chủ</b></i>  <span class="sr-only">(current)</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <div class="nav-item_home" style="display: flex;">
+                            <a class="nav-link" href="#" style=" font-size: 20px; margin-left: 25px;"><i class="fas fa-certificate"></i> <i><b>Dịch vụ</b></i>  <span class="sr-only">(current)</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <div class="nav-item_home" style="display: flex;">
+                            <a class="nav-link" href="LienHe.html" style=" font-size: 20px; margin-left: 25px;color: orange ;"><i class="fas fa-id-card-alt"></i> <i><b>Liên hệ</b></i>  <span class="sr-only">(current)</span></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" font-size: 20px;margin-left: 25px;">
+                            <i><b>Quản lý sách</b></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Nhập sách </a>
+                            <a class="dropdown-item" href="#">Sửa sách</a>
+                            <a class="dropdown-item" href="#">Xóa sách</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 form_input">
+                    <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search...." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: black;">Search</button>
+                </form>
+                <div class="nav-user_login">
+                    <div class="nav_login">
+                        <!-- <i class="fas fa-user icon-user" ></i> -->
+                        <span class="nav-item active nav-separator " style="display: inline-flex;">
+                            <a class="nav-link" href="Login.html" style=" font-size: 20px;margin-left: -10px;margin-top: -15px; "> <b>Login</b>  <span class="sr-only">(current)</span></a>
+                        </span>
+                    </div>
+                    <div class="nav_register">
+                        <!-- <i class="fas fa-user icon-user" ></i> -->
+                        <span class="nav-item active " style="display: inline-flex;">
+                            <a class="nav-link" href="Register.html" style=" font-size: 20px;margin-top: -5px; margin-left: -25px; "> <b>Register</b>  <span class="sr-only">(current)</span></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="Content_MainInterface">
+        <div class="Content_Top">
+            <div>
+                <h4>Tài Liệu Mới :</h4>
+            </div>
+            <button name="btn_NewBook" class="btn_NewBook">Sách Mới<a href="#"></a></button>
+            <button name="btn_TuDuyKyNangSong" class="btn_TuDuyKyNangSong">Tư Duy -  Kỹ Năng Sống<a href="#"></a></button>
+            <button name="btn_TapDai" class="btn_TapDai">Tập Dài<a href="#"></a></button>
+            <button name="btn_TaiLieuDocNhieu" class="btn_TaiLieuDocNhieu">Tài Liệu Đọc Nhiều<a href="#"></a></button>
+        </div>
+    </div>
+
+    <div class="GridBox_Top">
+        <div class="Grid-item-Main">
+            <!--Gird đầu tiên-->
+            <div class="item-item-main">
+                <div class="item-img-main">
+                    <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                </div>
+                <div class="item-text-main">
+                    <div class="cntent_text">
+                        <h3>Đắc Nhân Tâm</h3>
+                        <br>
+                        <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                    </div>
+                    <div class="content_button">
+                        <div class="div">
+                            <button class="item-text-button" name="#">Thêm</button>
+                            <button class="item-text-button" name="#">Xóa</button>
+                            <button class="item-text-button" name="#">Sửa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Grid-item-Main">
+            <!--Gird đầu tiên-->
+            <div class="item-item-main">
+                <div class="item-img-main">
+                    <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                </div>
+                <div class="item-text-main">
+                    <div class="cntent_text">
+                        <h3>Đắc Nhân Tâm</h3>
+                        <br>
+                        <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                    </div>
+                    <div class="content_button">
+                        <div class="div">
+                            <button class="item-text-button" name="#">Thêm</button>
+                            <button class="item-text-button" name="#">Xóa</button>
+                            <button class="item-text-button" name="#">Sửa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Grid-item-Main">
+            <!--Gird đầu tiên-->
+            <div class="item-item-main">
+                <div class="item-img-main">
+                    <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                </div>
+                <div class="item-text-main">
+                    <div class="cntent_text">
+                        <h3>Đắc Nhân Tâm</h3>
+                        <br>
+                        <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                    </div>
+                    <div class="content_button">
+                        <div class="div">
+                            <button class="item-text-button" name="#">Thêm</button>
+                            <button class="item-text-button" name="#">Xóa</button>
+                            <button class="item-text-button" name="#">Sửa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Content_MainInterface">
+            <div class="Content_Bottom">
+                <div>
+                    <h4>Tìm kiếm Theo Chủ Đề :</h4>
+                </div>
+                <button name="btn_NewBook" class="btn_NewBook">Khoa Học Máy Tính<a href="#"></a></button>
+                <button name="btn_TuDuyKyNangSong" class="btn_TuDuyKyNangSong">Tư Duy -  Kỹ Năng Sống<a href="#"></a></button>
+                <button name="btn_TapDai" class="btn_TapDai">Hệ Thống Thông Tin<a href="#"></a></button>
+                <button name="btn_TaiLieuDocNhieu" class="btn_TaiLieuDocNhieu">Mạng Máy Tính<a href="#"></a></button>
+            </div>
+        </div>
+
+        <div class="GridBox_Top">
+            <div class="Grid-item-Main">
+                <!--Gird đầu tiên-->
+                <div class="item-item-main">
+                    <div class="item-img-main">
+                        <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                    </div>
+                    <div class="item-text-main">
+                        <div class="cntent_text">
+                            <h3>Đắc Nhân Tâm</h3>
+                            <br>
+                            <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                        </div>
+                        <div class="content_button">
+                            <div class="div">
+                                <button class="item-text-button" name="#">Thêm</button>
+                                <button class="item-text-button" name="#">Xóa</button>
+                                <button class="item-text-button" name="#">Sửa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Grid-item-Main">
+                <!--Gird đầu tiên-->
+                <div class="item-item-main">
+                    <div class="item-img-main">
+                        <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                    </div>
+                    <div class="item-text-main">
+                        <div class="cntent_text">
+                            <h3>Đắc Nhân Tâm</h3>
+                            <br>
+                            <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                        </div>
+                        <div class="content_button">
+                            <div class="div">
+                                <button class="item-text-button" name="#">Thêm</button>
+                                <button class="item-text-button" name="#">Xóa</button>
+                                <button class="item-text-button" name="#">Sửa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Grid-item-Main">
+                <!--Gird đầu tiên-->
+                <div class="item-item-main">
+                    <div class="item-img-main">
+                        <img src="./imgsach/4.jpg" alt="Sách Đắc Nhân Tâm" class="item-img-book">
+                    </div>
+                    <div class="item-text-main">
+                        <div class="cntent_text">
+                            <h3>Đắc Nhân Tâm</h3>
+                            <br>
+                            <p><b>Thể Loại :</b>Tư Duy - Kỹ Năng Sống</p>
+                        </div>
+                        <div class="content_button">
+                            <div class="div">
+                                <button class="item-text-button" name="#">Thêm</button>
+                                <button class="item-text-button" name="#">Xóa</button>
+                                <button class="item-text-button" name="#">Sửa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </footer>
+        <script src="https://kit.fontawesome.com/4b4fe788c2.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
