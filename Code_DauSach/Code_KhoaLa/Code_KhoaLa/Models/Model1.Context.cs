@@ -13,10 +13,10 @@ namespace Code_KhoaLa.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLyThuVienEntities : DbContext
+    public partial class QuanLyThuVienEntities1 : DbContext
     {
-        public QuanLyThuVienEntities()
-            : base("name=QuanLyThuVienEntities")
+        public QuanLyThuVienEntities1()
+            : base("name=QuanLyThuVienEntities1")
         {
         }
     

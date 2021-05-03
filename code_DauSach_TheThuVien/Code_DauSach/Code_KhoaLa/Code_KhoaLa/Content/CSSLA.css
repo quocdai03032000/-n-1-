@@ -1,0 +1,704 @@
+﻿body {
+    font-family: Arial;
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.Center {
+    height: auto;
+    width: auto;
+}
+
+.form-LienHe {
+    height: 420px;
+    width: 1300px;
+    margin-left: 130px;
+    margin-top: 30px;
+    background-color: rgb(206, 207, 203);
+    padding: 15px;
+}
+
+.h4 {
+    color: rgb(41, 173, 235);
+}
+
+.bottom-hr {
+    line-height: 1.5em;
+}
+
+
+/*-------CSS Tra Cuu---------------------------------------------*/
+
+
+/*form đầu tiên form xin chào*/
+
+#inputxc {
+    border-radius: 10px;
+    background-color: rgb(51, 145, 233);
+}
+
+    #inputxc:hover {
+        background-color: rgb(21, 5, 168);
+        color: white;
+    }
+
+
+/*form thứ 2 form search*/
+
+.form-search {
+    height: 70px;
+    width: auto;
+    border-radius: 7px;
+    margin: 1px 6px 1px 6px;
+    background-color: rgb(202, 202, 206);
+}
+
+.search-select {
+    float: left;
+    height: 30px;
+    width: 150px;
+    border-radius: 4px;
+    background-color: rgb(191, 192, 192);
+}
+
+.search {
+    padding-top: 20px;
+    padding-left: 290px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:1200px) {
+    .search {
+        text-align: center;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+    }
+
+    .form-search {
+        text-align: center;
+        width: auto;
+    }
+
+    #textSearch {
+        width: auto;
+    }
+}
+
+@media (max-width:960px) {
+    .search,
+    .form-search {
+        padding-left: 0px;
+        padding-top: 0px;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    #textSearch {
+        width: auto;
+    }
+}
+
+#textSearch {
+    height: 30px;
+    width: 500px;
+    float: left;
+}
+
+#buttonSearch {
+    height: 32px;
+    width: 70px;
+    background-color: rgb(255, 185, 35);
+}
+
+    #buttonSearch:hover {
+        background-color: rgb(231, 127, 8);
+    }
+
+    #buttonSearch img {
+        display: block;
+        width: 49px;
+        height: 30px;
+        text-align: center;
+        margin: auto;
+    }
+
+
+/*----chỉnh images của sách-------------------------------------------_*/
+
+.item-img-book {
+    height: 350px;
+    width: 230px;
+}
+
+
+/*trợ giúp tìm kiếm*/
+
+.TroGiupTimKiem {
+    background-color: rgb(255, 255, 255);
+    margin-top: 2px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 2px 5px 2px 5px;
+    border-style: solid;
+    border-color: black;
+    line-height: 1em;
+}
+
+
+/* Gợi ý */
+
+.GoiY h5 {
+    color: rgb(24, 77, 0);
+    margin-left: 45px;
+    margin-top: 7px;
+}
+
+.Grid {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:960px) {
+    .Grid {
+        flex-direction: column;
+    }
+}
+
+.Grid-item {
+    background-color: rgb(240, 240, 240);
+    height: auto;
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0px 20px 0px 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:960px) {
+    .item-item {
+        flex-direction: row;
+    }
+
+    .item-img {
+        height: auto;
+        width: auto;
+    }
+
+    .item-text-button {
+        margin-left: 0px;
+    }
+}
+
+.item-item {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid red;
+    height: auto;
+    width: 100%;
+}
+
+.item-img {
+    width: 50%;
+    float: left;
+}
+
+    .item-img img {
+        padding: 4px;
+    }
+
+.item-text {
+    width: 50%;
+    float: right;
+    background-color: rgb(248, 246, 250);
+    padding: 5px;
+}
+
+    .item-text h3 {
+        text-align: center;
+    }
+
+#box-MoTa {
+    height: 120px;
+    width: auto;
+    border: 1px hidden rgb(32, 32, 32);
+    overflow: scroll;
+}
+
+.item-text-button {
+    height: 30px;
+    width: 100px;
+    background-color: rgb(41, 173, 235);
+    border-radius: 12px;
+    margin-left: 30px;
+}
+
+    .item-text-button:hover {
+        background-color: rgb(3, 20, 97);
+        color: lightgrey;
+    }
+
+
+/*-------CSS Thông Tin Sản Phẩm---------------------------------------------*/
+
+.Center h1 {
+    text-align: center;
+    font-weight: 300;
+    font-family: inherit;
+    padding: 20px;
+    width: auto;
+}
+
+    .Center h1 img {
+        height: 50px;
+        padding-right: 10px;
+    }
+
+.Grid-ThongTinSanPham {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Grid-left-img {
+    width: 30%;
+    float: left;
+}
+
+    .Grid-left-img img {
+        height: auto;
+        width: auto;
+        padding: 15px;
+        padding-left: 100px;
+    }
+
+.Grid-rigth-content {
+    width: 70%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:1000px) {
+    .Grid-rigth-content {
+        width: auto;
+    }
+
+    .form-label {
+        padding-left: 0px;
+        width: auto;
+        margin: 0px;
+    }
+
+    .Grid-rigth-content form {
+        padding: 0px;
+    }
+
+    .firm-input {
+        width: auto;
+    }
+}
+
+.Grid-rigth-content form {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+@media (max-width:600px) {
+    .Grid-rigth-content form {
+        width: 100%;
+    }
+
+    .form-label {
+        width: 20%;
+    }
+
+    .for-input {
+        width: 80%;
+    }
+}
+
+
+/*---Duwosi thẻ hr 3 button lục tím cam--------------------------*/
+
+.bottom_hr {
+    width: auto;
+    height: auto;
+}
+
+.parameter {
+    margin-left: 820px;
+}
+
+.green {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 120px;
+    text-align: center;
+    background-color: green;
+    padding: 4px;
+    float: left;
+    margin-right: 13px;
+}
+
+.blue {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 120px;
+    text-align: center;
+    background-color: rgba(4, 148, 243, 0.452);
+    padding: 4px;
+    float: left;
+    margin-right: 13px;
+}
+
+.oranges {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 180px;
+    text-align: center;
+    background-color: rgb(241, 129, 23);
+    padding: 4px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+/*---table trên poter--------------------------*/
+
+.form-label {
+    width: 30%;
+    float: left;
+    text-align: end;
+}
+
+.form-input {
+    width: 70%;
+}
+
+    .form-input #fluotXem {
+        width: 100px;
+    }
+
+#star {
+    margin-bottom: 0px;
+}
+
+    #star:visited {
+        background-image: url(./img/star-yellow.png);
+    }
+
+#star-soluong {
+    width: 30px;
+}
+
+#span_soLuong_like {
+    width: 30px;
+}
+
+#star img {
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+}
+
+.button-thongtinsanpham {
+    margin-left: 470px;
+}
+
+#btn_QuayLai .btn_ThemSach {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    width: 100px;
+    padding: 5px;
+    text-decoration:none;
+}
+
+#btn_QuayLai:hover {
+    background-color: rgb(85, 219, 243);
+    color: linen;
+
+}
+.form-control {
+    height: 20px;
+}
+.btn_ThemSach {
+    margin-left: 20px;
+}
+.btn_ThemSach:hover {
+    background-color: rgb(85, 219, 243);
+    color: linen;
+}
+#btn_Muon {
+    margin-left: 10px;
+    background-color: rgb(91, 153, 235);
+    color: black;
+    width: 100px;
+}
+
+    #btn_Muon:hover {
+        background-color: rgb(9, 10, 82);
+        color: linen;
+    }
+
+.Center hr {
+    height: 2px;
+    background-color: black;
+    margin: 10px;
+}
+
+
+/*code chừa đễ viết phần chưa biết :))*/
+
+.bottom_hr {
+    width: auto;
+    height: 60px;
+}
+
+.table table {
+    width: 800px;
+    text-align: center;
+    margin-left: 280px;
+}
+
+#tr_top {
+    background-color: rgb(151, 149, 147);
+}
+
+#tr_bottom {
+    background-color: rgb(218, 217, 216);
+}
+
+.table {
+    width: auto;
+    display: flex;
+}
+
+@media (max-width:600px) {
+    .table table {
+        width: auto;
+        margin-left: 20px
+    }
+}
+
+@media (max-width:1100px) {
+    .table table {
+        width: auto;
+        margin-left: 100px;
+    }
+}
+
+
+/*---Main_interface------------------*/
+
+.Content_Top {
+    float: inline;
+    padding: 10px;
+    margin-left: 20px 0px 0px 10px;
+}
+
+    .Content_Top h4 {
+        float: left;
+    }
+
+    .Content_Top button {
+        border-radius: 20em / 10em;
+        margin: 0px 5px 0px 5px;
+    }
+
+        .Content_Top button:hover {
+            background-color: rgb(233, 111, 23);
+        }
+
+
+/*Ther Grid */
+
+.GridBox_Top {
+    width: 100%;
+    height: auto;
+}
+
+.Grid-item-Main {
+    width: 30%;
+    height: auto;
+    float: left;
+    margin: 24px;
+}
+
+.item-item-main {
+    background-color: rgb(248, 248, 248);
+    border: 1px solid red;
+    height: auto;
+    width: 100%;
+}
+
+.item-img-main {
+    width: 50%;
+    float: left;
+}
+
+    .item-img-main img {
+        padding: 4px;
+    }
+
+.item-text-main {
+    width: 50%;
+    float: right;
+    background-color: rgb(248, 246, 250);
+    padding: 5px;
+}
+
+
+/*Content Bottom*/
+
+.Content_Bottom {
+    float: inline;
+    padding: 10px;
+    margin-left: 20px 0px 0px 10px;
+}
+
+    .Content_Bottom h4 {
+        float: left;
+    }
+
+    .Content_Bottom button {
+        border-radius: 20em / 10em;
+        margin: 0px 5px 0px 5px;
+    }
+
+        .Content_Bottom button:hover {
+            background-color: rgb(233, 111, 23);
+        }
+
+
+/*button Thêm xóa sửa trong thẻ Grid*/
+
+.content_button {
+    height: 210px;
+}
+
+    .content_button div {
+        padding-top: 50px;
+    }
+
+    .content_button button {
+        margin: 5px 5px 5px 90px;
+    }
+
+
+/*----CSS ADDBOOK ____________*/
+
+#btn_them {
+    margin-left: 10px;
+    background-color: rgb(91, 153, 235);
+    color: black;
+    width: 100px;
+}
+
+    #btn_them:hover {
+        background-color: blue;
+        color: white;
+    }
+
+.Grid-left-img-add {
+    width: 30%;
+    float: left;
+}
+
+.Center-h1 {
+    text-align: center;
+    color: rgb(155, 3, 3);
+    z-index: 0;
+    margin-bottom:20px;
+}
+.Center-h1 h1{
+   font-size:50px;
+}
+
+.Center_add_edit_add {
+    background-image: url(./img/pexels-stanislav-kondratiev-2908984.jpg);
+    background-position: center center;
+    background-size: contain;
+    z-index: 0;
+    margin: 0px;
+    height:720px;
+}
+
+.Form {
+    width: 900px;
+    height: 380px;
+    margin-left: 310px;
+    border-style: none solid none solid;
+    opacity: 0.7;
+    background-color: rgb(122, 119, 119);
+}
+
+.Grid-Add {
+    width: 100%;
+    padding: 7px;
+    z-index: 0;
+}
+
+.Grid-left-img-add {
+    text-align: center;
+    width: 30%;
+    border: none solid none none;
+}
+
+    .Grid-left-img-add img {
+        height: 360px;
+        width: 270px;
+        margin: 0px;
+        /*opacity: none;*/
+    }
+
+.Grid-rigth-content-add form {
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+ /*   opacity: none;*/
+   display:inline-flex;
+   z-index:0;
+}
+
+.form-label-add {
+    width: 20%;
+    float: left;
+    text-align: left;
+    z-index: 1;
+    margin-left:30px;
+    line-height:2.1rem;
+    font-size:20px;
+}
+
+    .form-label-add label {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+.form-input-add {
+    width: 80%;
+    height: 360px;
+    border-radius:10%;
+}
+
+
+
+.Center_add_edit_delete {
+    height: auto;
+    width: auto;
+    background-color: bisque;
+}
+.Content_add{
+    padding-top:80px;
+}
