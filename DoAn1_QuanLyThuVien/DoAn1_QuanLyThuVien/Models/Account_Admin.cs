@@ -21,11 +21,10 @@ namespace DoAn1_QuanLyThuVien.Models
         public string User { get; set; }
         public string Password { get; set; }
 
-        [NotMapped]
-        [Compare("Password")]
-        public string ConfirmPass { get; set; }
+        //[NotMapped]
+        //[Compare("Password")]
+        //public string ConfirmPass { get; set; }
 
-        [NotMapped]
-        public string OldPassword { get; set; }
+     
     }
 }

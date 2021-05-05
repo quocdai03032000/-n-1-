@@ -27,7 +27,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             else
             {                
                 Session["User"] = ad.User;
-                return RedirectToAction("Main", "Main");
+                return RedirectToAction("Main", "Main");                
             }
         }
 
@@ -46,19 +46,24 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ChangePass(Account_Admin ad, string _name, string _newPass)
+        public ActionResult ChangePass(Account_Admin ad, string _name, string _newPass, string _nhapLaiPass)
         {
             ad = database.Account_Admin.Where(s => s.MaAccount == 1 && s.Password == _name).FirstOrDefault();
             //var check = database.Account_Admin.Where(s=>s.Password == _name && s.MaAccount==1).FirstOrDefault();            
             if (ad != null)
             {
-
-                //database.Entry(ad).State = System.Data.Entity.EntityState.Modified;
-                ad.MaAccount = 1;
-                ad.User = "admin";
-                ad.Password = _newPass;
-                database.SaveChanges();
-                return RedirectToAction("Main", "Main");
+                if(_newPass==_nhapLaiPass)
+                {
+                    ad.Password = _newPass;
+                    database.Entry(ad).State = System.Data.Entity.EntityState.Modified;
+                    database.SaveChanges();
+                    ViewBag.Error_ChangePass = "Đổi mật khẩu thành công";
+                }
+                else
+                {
+                    ViewBag.Error_ChangePass = "Mật khẩu không trùng khớp";
+                }                
+                return View("ChangePass", ad);
             }
             else
             {
@@ -193,6 +198,12 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
                 return RedirectToAction("Index", "Main");
             
         }
+        //[HttpPost]
+        //public ActionResult ThemTheTV(int id)
+        //{
+        //    var theTV = database.DangKyTheTVs.Where(a => a.MaDangKyThe == id).SingleOrDefault();
+
+        //}
 
        
 

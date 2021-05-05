@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DoAn1_QuanLyThuVien.Models.Account_Admin> 
+﻿@model DoAn1_QuanLyThuVien.Models.Account_Admin
 
 @{
     ViewBag.Title = "Đổi mật khẩu";
@@ -22,11 +22,12 @@
         </div>
         <div class="changePass-field ">     
             <input type="password" name="_newPass" class="changePass-input" placeholder="Nhập mật khẩu mới" required>
-            @*@Html.PasswordFor(model => model.Password, new { @placeholder = "Nhập mật khẩu mới", @class = "changePass-input" })*@            
+            @*@Html.TextBoxFor(model => model.Password, new { @placeholder = "Nhập mật khẩu mới", @class = "changePass-input" })*@              
         </div>
-        @*<div class="changePass-field changePass-input-pass">           
-            @Html.PasswordFor(model => model.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @class = "changePass-input" }) 
-        </div>*@
+        <div class="changePass-field changePass-input-pass">  
+            <input type="password" name="_nhapLaiPass" class="changePass-input" placeholder="Nhập lại mật khẩu" required>
+            @*@Html.PasswordFor(model => model.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @class = "changePass-input" })*@ 
+        </div>
         <a href="#" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
 
         <button type="submit" class="changePass-submit">Đổi mật khẩu</button>

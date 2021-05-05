@@ -55,8 +55,8 @@
                             <td>@Html.DisplayFor(a=>item.Password)</td>
                             <td>@Html.DisplayFor(a => item.HoTen)</td>
                             <td>@Html.DisplayFor(a => item.NgayLam)</td>
-                            <td class="theTV-btn">
-                                <a class="suss" href="#"><i class="fas fa-check"></i></a>
+                            <td class="theTV-btn">                                
+                                <a class="suss" href="@Url.Action("ThemTheTV","Main",new {id=item.MaDangKyThe})"><i class="fas fa-check"></i></a>
                                 <a class="del" href="#"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
