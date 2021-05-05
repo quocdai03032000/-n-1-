@@ -1,0 +1,66 @@
+﻿@model DoAn1_QuanLyThuVien.Models.DangKyTheTV
+
+@{
+    ViewBag.Title = "Đăng ký thẻ thư viện";
+    Layout = "~/Areas/USER/Views/Shared/_Layout_User_1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ******* link ****** -->
+    <!-- ******************* -->
+</head>
+<body>
+
+    <!-- Register start -->
+    @using (Html.BeginForm())
+    {
+        <div class="login_register">
+            <div class="register">
+                <div class="header-login">
+                    <H5>Đăng ký thẻ thư viện</H5>
+                </div>
+                <div class="line">
+                    <div class="line-or"></div>
+                </div>
+
+                <div class="register-field">
+                    <i class="register-icon fas fa-user"></i>
+                    @*<input type="text" class="register-input" placeholder="Nhập họ và tên" required>*@
+                    @Html.TextBoxFor(model => model.HoTen, new { @placeholder = "Nhập họ và tên", @class = "register-input" })                 
+                </div>
+                <div class="register-field">
+                    <i class="fas fa-barcode"></i>
+                    @*<input type="text" class="register-input" placeholder="Nhập MSSV" required>*@
+                    @Html.TextBoxFor(model => model.MaThe, new { @placeholder = "Nhập MSSV", @class = "register-input" })
+                    
+                </div>
+                <div class="register-field ">
+                    <i class="register-icon fas fa-lock"></i>
+                    @*<input type="password" class="register-input " placeholder="Nhập mật khẩu" required>*@
+                    @Html.PasswordFor(model => model.Password, new { @placeholder = "Nhập mật khẩu", @class = "register-input" })
+                    
+                </div>
+                <div class="register-field register-input-pass">
+                    <i class="fas fa-check-double"></i>
+                    @*<input type="password" class="register-input " placeholder="Nhập lại mật khẩu" required>*@
+                    @Html.PasswordFor(model => model.ConfirmPass, new { @placeholder = "Nhập lại mật khẩu", @class = "register-input" })
+                    
+                </div>
+                <a href="@Url.Action("Index", "Main")" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
+                <a href="@Url.Action("Login","Main")" class="page_login"> Đăng nhập?</a>
+                <button type="submit" class="register-submit">Đăng ký</button>
+            </div>
+        </div>
+
+   
+    }
+    
+    <!-- register end -->
+    <!-- ***************************** -->
+
+</body>
+</html>
+
+

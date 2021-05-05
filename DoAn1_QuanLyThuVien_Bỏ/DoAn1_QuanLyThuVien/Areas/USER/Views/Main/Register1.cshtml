@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Đăng ký thẻ";
+    Layout = "~/Areas/USER/Views/Shared/_Layout_User_1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ******* link ****** -->
+    
+    <!-- ******************* -->    
+</head>
+<body>
+
+    <!-- Render body -->
+    <!-- Register start -->
+    <div class="login_register">
+        <form action="javascrip:void(0);" class="register">
+            <div class="header-login">
+                <H5>Đăng ký thẻ thư viện</H5>
+            </div>
+            <div class="line">
+                <div class="line-or"></div>
+            </div>
+
+            <div class="register-field">
+                <i class="register-icon fas fa-user"></i>
+                <input type="text" class="register-input" placeholder="Nhập họ và tên" required>
+            </div>
+            <div class="register-field">
+                <i class="fas fa-barcode"></i>
+                <input type="text" class="register-input" placeholder="Nhập MSSV" required>
+            </div>
+            <div class="register-field ">
+                <i class="register-icon fas fa-lock"></i>
+                <input type="password" class="register-input " placeholder="Nhập mật khẩu" required>
+            </div>
+            <div class="register-field register-input-pass">
+                <i class="fas fa-check-double"></i>
+                <input type="password" class="register-input " placeholder="Nhập lại mật khẩu" required>
+            </div>
+            <a href="@Url.Action("Index","Main")" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
+            <a href="@Url.Action("Login","Main")" class="page_login"> Đăng nhập?</a>
+
+            <button type="submit" class="register-submit">Đăng ký</button>
+
+        </form>
+    </div>
+
+    <!-- register end -->
+    <!-- ***************************** -->
+
+
+</body>
+</html>
+

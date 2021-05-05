@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Areas/USER/Views/Shared/_Layout_User_1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ******* link ****** -->
+   
+    <!-- ******************* -->   
+</head>
+<body>
+
+
+
+    <!-- menu header End -->
+    <!-- ***************************** -->
+    <!-- Render body -->
+    <!-- Login start -->
+    <div class="login_begin">
+        <form action="javascrip:void(0);" class="login">
+            <div class="header-login">
+                <img src="~/Assets/img/logoHuflit.png" alt="logo trường huflit">
+                <H5>Thư viện trường học</H5>
+            </div>
+            <div class="line">
+                <div class="line-or"></div>
+            </div>
+
+            <div class="login-field">
+                <i class="login-icon fas fa-user"></i>
+                <input type="text" class="login-input" placeholder="Nhập tên tài khoản" required>
+            </div>
+            <div class="login-field login-input-pass">
+                <i class="login-icon fas fa-lock"></i>
+                <input type="password" class="login-input " placeholder="Nhập mật khẩu" required>
+            </div>
+            <a href="@Url.Action("Index","Main")" class="home_back"><i class="fas fa-angle-left"></i> Quay về trang chủ?</a>
+            <a href="@Url.Action("Register","Main")" class="page_register"> Đăng ký</a>
+
+            <button type="submit" class="login-submit">Login</button>
+
+        </form>
+    </div>
+
+    <!-- Login end -->
+    <!-- ***************************** -->
+
+
+</body>
+</html>
+
+
