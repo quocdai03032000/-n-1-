@@ -114,22 +114,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult ThemDauSach(string MaDauSach, DauSach sach)
         {
-            //int maDauSach = int.Parse(MaDauSach);
-            //var check = database.DauSaches.Where(a => a.MaDauSach == maDauSach).SingleOrDefault();
-
-            //if (check == null)
-            //{
-            //    sach.SoLuong = 0;
-            //    database.DauSaches.Add(sach);
-            //    database.SaveChanges();
-            //    return RedirectToAction("DauSach", "Main");
-
-            //}
-            //else
-            //{
-            //    ModelState.AddModelError("", "Trùng Mã Đầu Sách");
-            //    return View(sach);
-            //}
+            
             try
             {
                 if (sach.imageUploader != null)
