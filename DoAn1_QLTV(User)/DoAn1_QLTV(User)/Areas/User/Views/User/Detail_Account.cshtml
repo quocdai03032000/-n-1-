@@ -1,0 +1,52 @@
+﻿@model DoAn1_QLTV_User_.Models.DangKyTheTV
+
+@{
+    ViewBag.Title = "Detail_Account";
+    Layout = "~/Areas/User/Views/Shared/_LayoutLoginSuccess.cshtml";
+}
+
+<h2>Detail_Account</h2>
+
+<div>
+    <h4>DangKyTheTV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaThe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaThe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayLam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayLam)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
