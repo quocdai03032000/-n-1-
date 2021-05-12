@@ -39,8 +39,8 @@
                             <td>@Html.DisplayFor(a => item.TheThuVien.HoTen)</td>
                             <td>@Html.DisplayFor(a => item.Sach.DauSach.TenSach)</td>
                             <td class="theTV-btn">
-                                <a class="suss" href="#"><i class="fas fa-check"></i></a>
-                                <a class="del"href="@Url.Action("Xoa_MuonSach","Main", new {id=item.MaDangKyMuonSach})"> <i class="fas fa-trash-alt"></i></a>
+                                <a class="suss" href="@Url.Action("Them_DSDangKy_MuonSach","Main", new {id=item.MaDangKyMuonSach})"><i class="fas fa-check"></i></a>
+                                <a class="del"href="@Url.Action("Xoa_DSDangKy_MuonSach","Main", new {id=item.MaDangKyMuonSach})"> <i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     }                    

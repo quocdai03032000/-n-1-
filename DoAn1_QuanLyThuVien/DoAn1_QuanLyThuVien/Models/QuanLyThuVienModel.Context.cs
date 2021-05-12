@@ -26,6 +26,8 @@ namespace DoAn1_QuanLyThuVien.Models
         }
     
         public virtual DbSet<Account_Admin> Account_Admin { get; set; }
+        public virtual DbSet<BaoCaoMuonSach> BaoCaoMuonSaches { get; set; }
+        public virtual DbSet<BaoCaoTraSach> BaoCaoTraSaches { get; set; }
         public virtual DbSet<DangKyTheTV> DangKyTheTVs { get; set; }
         public virtual DbSet<DauSach> DauSaches { get; set; }
         public virtual DbSet<DKyMuonSach> DKyMuonSaches { get; set; }

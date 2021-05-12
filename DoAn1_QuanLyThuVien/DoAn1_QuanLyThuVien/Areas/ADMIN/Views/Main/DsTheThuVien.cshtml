@@ -47,7 +47,7 @@
                             <td>@Html.DisplayFor(a => item.NgayHetHan)</td>
                             <td>@Html.DisplayFor(a=>item.GhiChu)</td>
                             <td class="theTV-btn">
-                                <a class="fix" href="#"><i class="fas fa-wrench"></i></a>
+                                <a class="fix" href="@Url.Action("ResetPass","Main",new { id=item.MaThe})">@*<i class="fas fa-wrench"></i>*@ Reset password</a>
                                 <a class="block" href="@Url.Action("BlockTheThuVien","Main",new { id=item.MaThe})"><i class="fas fa-lock"></i></a>
                                 <a class="del" href="@Url.Action("XoaTheThuVien","Main",new {id=item.MaThe })"><i class="fas fa-trash-alt"></i></a>
                             </td>

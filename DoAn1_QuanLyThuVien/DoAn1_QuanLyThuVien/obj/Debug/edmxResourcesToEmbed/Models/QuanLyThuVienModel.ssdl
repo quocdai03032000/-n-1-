@@ -8,6 +8,24 @@
     <Property Name="User" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="BaoCaoMuonSach">
+    <Key>
+      <PropertyRef Name="id_BaoCaoMuonSach" />
+    </Key>
+    <Property Name="id_BaoCaoMuonSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayMuon" Type="datetime" />
+    <Property Name="Mssv" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaSach" Type="int" />
+  </EntityType>
+  <EntityType Name="BaoCaoTraSach">
+    <Key>
+      <PropertyRef Name="id_BaoCaoTraSach" />
+    </Key>
+    <Property Name="id_BaoCaoTraSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NgayTra" Type="datetime" />
+    <Property Name="MSSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaSach" Type="int" />
+  </EntityType>
   <EntityType Name="DangKyTheTV">
     <Key>
       <PropertyRef Name="MaDangKyThe" />
@@ -35,7 +53,7 @@
     <Key>
       <PropertyRef Name="MaDangKyMuonSach" />
     </Key>
-    <Property Name="MaDangKyMuonSach" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaDangKyMuonSach" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaThe" Type="nvarchar" MaxLength="50" />
     <Property Name="MaSach" Type="int" />
   </EntityType>
@@ -94,6 +112,54 @@
     <Property Name="MaTinhTrangSach" Type="int" Nullable="false" />
     <Property Name="TenTinhTrangSach" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_BaoCaoMuonSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1" />
+    <End Role="BaoCaoMuonSach" Type="Self.BaoCaoMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BaoCaoMuonSach">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoMuonSach_TheThuVien">
+    <End Role="TheThuVien" Type="Self.TheThuVien" Multiplicity="0..1" />
+    <End Role="BaoCaoMuonSach" Type="Self.BaoCaoMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheThuVien">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="BaoCaoMuonSach">
+        <PropertyRef Name="Mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoTraSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1" />
+    <End Role="BaoCaoTraSach" Type="Self.BaoCaoTraSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BaoCaoTraSach">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoTraSach_TheThuVien">
+    <End Role="TheThuVien" Type="Self.TheThuVien" Multiplicity="0..1" />
+    <End Role="BaoCaoTraSach" Type="Self.BaoCaoTraSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheThuVien">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="BaoCaoTraSach">
+        <PropertyRef Name="MSSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DKyMuonSach_Sach">
     <End Role="Sach" Type="Self.Sach" Multiplicity="0..1" />
     <End Role="DKyMuonSach" Type="Self.DKyMuonSach" Multiplicity="*" />
@@ -180,6 +246,8 @@
   </Association>
   <EntityContainer Name="QuanLyThuVienModelStoreContainer">
     <EntitySet Name="Account_Admin" EntityType="Self.Account_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaoCaoMuonSach" EntityType="Self.BaoCaoMuonSach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaoCaoTraSach" EntityType="Self.BaoCaoTraSach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DangKyTheTV" EntityType="Self.DangKyTheTV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DauSach" EntityType="Self.DauSach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DKyMuonSach" EntityType="Self.DKyMuonSach" Schema="dbo" store:Type="Tables" />
@@ -189,6 +257,22 @@
     <EntitySet Name="TheThuVien" EntityType="Self.TheThuVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinhTrang_TheTV" EntityType="Self.TinhTrang_TheTV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinhTrangSach" EntityType="Self.TinhTrangSach" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BaoCaoMuonSach_Sach" Association="Self.FK_BaoCaoMuonSach_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="BaoCaoMuonSach" EntitySet="BaoCaoMuonSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoMuonSach_TheThuVien" Association="Self.FK_BaoCaoMuonSach_TheThuVien">
+      <End Role="TheThuVien" EntitySet="TheThuVien" />
+      <End Role="BaoCaoMuonSach" EntitySet="BaoCaoMuonSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoTraSach_Sach" Association="Self.FK_BaoCaoTraSach_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="BaoCaoTraSach" EntitySet="BaoCaoTraSach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoTraSach_TheThuVien" Association="Self.FK_BaoCaoTraSach_TheThuVien">
+      <End Role="TheThuVien" EntitySet="TheThuVien" />
+      <End Role="BaoCaoTraSach" EntitySet="BaoCaoTraSach" />
+    </AssociationSet>
     <AssociationSet Name="FK_DKyMuonSach_Sach" Association="Self.FK_DKyMuonSach_Sach">
       <End Role="Sach" EntitySet="Sach" />
       <End Role="DKyMuonSach" EntitySet="DKyMuonSach" />

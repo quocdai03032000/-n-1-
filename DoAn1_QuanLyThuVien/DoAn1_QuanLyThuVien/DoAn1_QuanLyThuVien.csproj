@@ -161,6 +161,12 @@
     <Compile Include="Models\Account_Admin.cs">
       <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaoCaoMuonSach.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaoCaoTraSach.cs">
+      <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DangKyTheTV.cs">
       <DependentUpon>QuanLyThuVienModel.tt</DependentUpon>
     </Compile>
@@ -271,13 +277,6 @@
     <Content Include="Areas\Admin\Views\Main\Sach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\SuaDauSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\ThemSach.cshtml" />
-    <EntityDeploy Include="Models\QuanLyThuVienModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyThuVienModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QuanLyThuVienModel.edmx.diagram">
-      <DependentUpon>QuanLyThuVienModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Main\QLMuonTraSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\DSDangKy_MuonSach.cshtml" />
     <Content Include="Areas\User\Views\Shared\_Layout_User_1.cshtml" />
@@ -285,6 +284,16 @@
     <Content Include="Areas\User\Views\Main\Index.cshtml" />
     <Content Include="Areas\User\Views\Main\Login.cshtml" />
     <Content Include="Areas\User\Views\Main\Register.cshtml" />
+    <EntityDeploy Include="Models\QuanLyThuVienModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyThuVienModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuanLyThuVienModel.edmx.diagram">
+      <DependentUpon>QuanLyThuVienModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Main\BaoCaoMuonSach.cshtml" />
+    <Content Include="Areas\Admin\Views\Main\BaoCaoTraSach.cshtml" />
+    <Content Include="Areas\Admin\Views\Main\BaoCaoTinhTrang.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\IMG_scripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

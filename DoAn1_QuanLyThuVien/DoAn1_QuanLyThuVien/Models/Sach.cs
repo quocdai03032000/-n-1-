@@ -17,6 +17,8 @@ namespace DoAn1_QuanLyThuVien.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sach()
         {
+            this.BaoCaoMuonSaches = new HashSet<BaoCaoMuonSach>();
+            this.BaoCaoTraSaches = new HashSet<BaoCaoTraSach>();
             this.DKyMuonSaches = new HashSet<DKyMuonSach>();
             this.Sach_Dang_Muon = new HashSet<Sach_Dang_Muon>();
         }
@@ -27,6 +29,10 @@ namespace DoAn1_QuanLyThuVien.Models
         public Nullable<int> MaTinhTrangSach { get; set; }
         public string GhiChu { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaoCaoMuonSach> BaoCaoMuonSaches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaoCaoTraSach> BaoCaoTraSaches { get; set; }
         public virtual DauSach DauSach { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DKyMuonSach> DKyMuonSaches { get; set; }

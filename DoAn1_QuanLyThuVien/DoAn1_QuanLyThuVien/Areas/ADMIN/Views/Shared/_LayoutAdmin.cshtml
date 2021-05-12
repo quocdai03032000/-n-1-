@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">   
     <link href="~/Assets/Admin/styleAdmin.css" rel="stylesheet" />
     <script src="~/Scripts/IMG_scripts.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <!-- ******************* -->
 
     <title>@ViewBag.Title</title>
@@ -48,9 +49,9 @@
             <li>
                 <a href="#">Báo cáo</a>
                 <ul class="submenu">
-                    <li><a href="#"> Báo cáo 1</a></li>
-                    <li><a href="#"> Báo cáo 2</a></li>
-                    <li><a href="#"> Báo cáo 3</a></li>
+                    <li><a href="@Url.Action("BaoCaoMuonSach","Main")"> Báo cáo mượn sách</a></li>
+                    <li><a href="@Url.Action("BaoCaoTraSach","Main")"> Báo cáo trả sách</a></li>
+                    <li><a href="@Url.Action("BaoCaoTinhTrang","Main")"> Báo cáo tình trạng sách</a></li>
                 </ul>
             </li>
             <div class="nameAdmin">

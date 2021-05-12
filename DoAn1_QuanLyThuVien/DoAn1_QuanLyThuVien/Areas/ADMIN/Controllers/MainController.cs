@@ -114,7 +114,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult ThemDauSach(string MaDauSach, DauSach sach)
         {
-            
+
             try
             {
                 if (sach.imageUploader != null)
@@ -151,7 +151,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
 
 
         public ActionResult SuaDauSach(int id)
-        {           
+        {
             return View(database.DauSaches.Where(a => a.MaDauSach == id).FirstOrDefault());
         }
         [HttpPost]
@@ -167,11 +167,11 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         public ActionResult XoaDauSach(int id)
         {
             var check = database.Saches.Where(a => a.MaDauSach == id).SingleOrDefault();
-            if(check==null)
+            if (check == null)
             {
                 var DauSach = database.DauSaches.Where(a => a.MaDauSach == id).SingleOrDefault();
                 database.DauSaches.Remove(DauSach);
-                database.SaveChanges();                
+                database.SaveChanges();
             }
             else
             {
@@ -260,7 +260,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         /*----- block thẻ thư viện -----*/
         [HttpGet]
         public ActionResult BlockTheThuVien(string id)
-        {            
+        {
             var theTV = database.TheThuViens.Where(a => a.MaThe == id).SingleOrDefault();
             theTV.MaTinhTrang = 1;
             database.Entry(theTV).State = System.Data.Entity.EntityState.Modified;
@@ -270,15 +270,24 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         /*----- Xoá thẻ thư viện -----*/
         [HttpGet]
         public ActionResult XoaTheThuVien(string id)
-        {            
+        {
             var xoaTheTV = database.TheThuViens.Where(a => a.MaThe == id).SingleOrDefault();
             database.TheThuViens.Remove(xoaTheTV);
             database.SaveChanges();
             return RedirectToAction("DsTheThuVien", "Main");
         }
-        
-        
-        
+
+        /*----- Reset Password -----*/
+        [HttpGet]
+        public ActionResult ResetPass(string id)
+        {
+            var theTV = database.TheThuViens.Where(a => a.MaThe == id).FirstOrDefault();
+            theTV.Password = "123";
+            database.SaveChanges();
+            return RedirectToAction("DsTheThuVien","Main");
+        }
+
+
         /*----- Danh Sách đăng ký thẻ TV -----*/
         public ActionResult DsDangKyTheTV(string _name)
         {
@@ -343,7 +352,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             }
             else
                 return RedirectToAction("Index", "Main");
-           
+
         }
 
 
@@ -351,7 +360,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         {
             //if (Session["User"] != null)
             //{
-               
+
             //}
             //else
             //    return RedirectToAction("Index", "Main");
@@ -362,15 +371,82 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             else
                 return View(database.DKyMuonSaches.Where(s => s.MaThe.Contains(_name)).ToList());
         }
+        //Xác nhận mượn sách
+        // chuyển sách từ bảng đăng ký mượn sách sang bảng sách đang được mượn
         [HttpGet]
-        public ActionResult Xoa_MuonSach(string id)
+        public ActionResult Them_DSDangKy_MuonSach(int id)
+        {
+            var DK_MuonSach = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).SingleOrDefault();
+            var Sach_muon = new Sach_Dang_Muon();
+            Sach_muon.MaThe = DK_MuonSach.MaThe;
+            Sach_muon.MaSach = DK_MuonSach.MaSach;
+            Sach_muon.NgayMuon = DateTime.Now;
+            database.Sach_Dang_Muon.Add(Sach_muon);
+            database.DKyMuonSaches.Remove(DK_MuonSach);
+            database.SaveChanges();
+            return RedirectToAction("DSDangKy_MuonSach", "Main");
+        }
+        // xoá đối tượng ra khỏi bảng đăng ký mượn sách
+        [HttpGet]
+        public ActionResult Xoa_DSDangKy_MuonSach(int id)
         {           
             var del = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).SingleOrDefault();
             database.DKyMuonSaches.Remove(del);
             database.SaveChanges();
             return RedirectToAction("DSDangKy_MuonSach", "Main");
         }
+        //Trả sách
+        public ActionResult TraSach(int id)
+        {
+            var del = database.Sach_Dang_Muon.Where(a => a.MaSachMuon == id).SingleOrDefault();
+            database.Sach_Dang_Muon.Remove(del);
+            database.SaveChanges();
+            return RedirectToAction("QLMuonTraSach", "Main");
+        }
         #endregion
 
+        public ActionResult BaoCaoMuonSach(string _name)
+        {
+            if (Session["User"] != null)
+            {
+                if (_name == null)
+                {
+                    return View(database.BaoCaoMuonSaches.ToList());
+                }
+                else
+                    return View(database.BaoCaoMuonSaches.Where(s => s.Mssv.Contains(_name)).ToList());
+            }
+            else
+                return RedirectToAction("Index", "Main");
+        }
+        public ActionResult BaoCaoTraSach(string _name)
+        {
+            if (Session["User"] != null)
+            {
+                if (_name == null)
+                {
+                    return View(database.BaoCaoTraSaches.ToList());
+                }
+                else
+                    return View(database.BaoCaoTraSaches.Where(s => s.MSSV.Contains(_name)).ToList());
+            }
+            else
+                return RedirectToAction("Index", "Main");
+        }
+
+        public ActionResult BaoCaoTinhTrang()
+        {
+            var slDauSach = database.DauSaches.Count();
+            var slSach = database.Saches.Count();
+            var slSachMuon = database.Sach_Dang_Muon.Count();
+            var slSachHong = database.Saches.Where(a => a.MaTinhTrangSach == 4).Count();
+            var slSachMat = database.Saches.Where(a => a.MaTinhTrangSach == 3).Count();
+            ViewBag.slDauSach = slDauSach.ToString();
+            ViewBag.slSach = slSach.ToString();
+            ViewBag.slSachMuon = slSachMuon.ToString();
+            ViewBag.slSachHong = slSachHong.ToString();
+            ViewBag.slSachMat = slSachMat.ToString();
+            return View(database.Saches.Where(a => a.MaTinhTrangSach == 4).ToList());
+        }
     }
 }

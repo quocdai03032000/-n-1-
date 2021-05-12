@@ -19,8 +19,8 @@ namespace DoAn1_QuanLyThuVien.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DauSach()
         {
-            this.Saches = new HashSet<Sach>();
             HinhAnh = "~/Content/imgsach/add.png";
+            this.Saches = new HashSet<Sach>();
         }
     
         public int MaDauSach { get; set; }
@@ -31,11 +31,11 @@ namespace DoAn1_QuanLyThuVien.Models
         public string NhaXuatBan { get; set; }
         public string HinhAnh { get; set; }
         public Nullable<int> SoLuong { get; set; }
-
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sach> Saches { get; set; }
         [NotMapped]
         public HttpPostedFileBase imageUploader { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Saches { get; set; }
     }
 }

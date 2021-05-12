@@ -42,7 +42,7 @@
                             <td>@Html.DisplayFor(a => item.Sach.DauSach.TenSach)</td>
                             <td>@Html.DisplayFor(a => item.NgayMuon)</td>
                             <td class="table_DauSach_btn">
-                                <a href="#">Trả sách</a>
+                                <a href="@Url.Action("TraSach","Main",new {id=item.MaSachMuon })">Trả sách</a>
                             </td>
                         </tr>
                     }                  
