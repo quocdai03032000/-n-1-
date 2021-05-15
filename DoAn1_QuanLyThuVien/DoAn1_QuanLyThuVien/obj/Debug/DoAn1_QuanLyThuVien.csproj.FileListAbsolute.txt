@@ -283,7 +283,6 @@ C:\Users\Tran Quoc Dai\Desktop\DoAn1_Test\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLy
 C:\Users\Tran Quoc Dai\Desktop\DoAn1_Test\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache
 C:\Users\Tran Quoc Dai\Desktop\DoAn1_Test\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.dll
 C:\Users\Tran Quoc Dai\Desktop\DoAn1_Test\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.pdb
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\ApplicationInsights.config
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\roslyn\csc.exe
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\roslyn\csc.exe.config
@@ -357,3 +356,4 @@ C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.dll
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.pdb
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache

@@ -101,9 +101,47 @@ namespace DoAn1_QuanLyThuVien.Areas.User.Controllers
         [HttpGet]
         public ActionResult ChiTietSach(int id)
         {
-            return View(database.Saches.Where(a=>a.MaDauSach==id).ToList());
+            var dauSach = database.DauSaches.Where(a => a.MaDauSach == id).FirstOrDefault();
+            var soLuong = database.Saches.Where(a => a.MaDauSach == id && a.MaTinhTrangSach == 1).Count();
+            ViewBag.TenDauSach = dauSach.TenSach;
+            ViewBag.NamXB = dauSach.NamXuatBan;
+            ViewBag.SoLuong = soLuong.ToString();
+            ViewBag.TheLoai = dauSach.TheLoai;
+            ViewBag.TacGia = dauSach.TacGia;
+            ViewBag.hinhAnh = dauSach.HinhAnh;
+            ViewBag.NXB = dauSach.NhaXuatBan;
+            return View(database.Saches.Where(a=>a.MaDauSach==id&& a.MaTinhTrangSach==1).ToList());
         }
 
+        /*----------------- Giỏ hàng --------------------*/
+        public Cart GetCart()
+        {
+            Cart cart = Session["Cart"] as Cart;
+            if (cart == null || Session["Cart"] == null)
+            {
+                cart = new Cart();
+                Session["Cart"] = cart;
+            }
+            return cart;
+        }
+
+        public ActionResult Cart()
+        {
+            if (Session["Cart"] == null)
+                return RedirectToAction("Cart", "Main");
+            Cart _cart = Session["Cart"] as Cart;
+            return View(_cart);
+        }
+        [HttpPost]
+        public ActionResult AddToCart(int id)
+        {
+            var sach = database.Saches.SingleOrDefault(s => s.id == id);
+            if(sach!=null)
+            {
+                GetCart().Add_Sach_Cart(sach);
+            }
+            return RedirectToAction("Cart", "Main");
+        }
         public ActionResult Contact()
         {
             return View();
