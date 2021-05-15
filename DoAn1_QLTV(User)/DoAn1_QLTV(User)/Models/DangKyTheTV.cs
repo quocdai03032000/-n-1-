@@ -17,7 +17,6 @@ namespace DoAn1_QLTV_User_.Models
 
     public partial class DangKyTheTV
     {
-     
         public int MaDangKyThe { get; set; }
 
         [DisplayName("Tài khoản")]

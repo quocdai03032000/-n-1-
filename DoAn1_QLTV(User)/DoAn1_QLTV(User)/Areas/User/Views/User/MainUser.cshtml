@@ -21,15 +21,26 @@
     <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-sm-12 col col-lg-3">
-                <div class="card-pro">
+        <div class="col-sm-12 col-lg-3">
+@*            <div class="card-pro">
+                <a href="@Url.Action("Details_Book","User",new { id=item.MaDauSach })">
                     <img src="@Url.Content(item.HinhAnh)" style="height:150px;width:150px" />
-                    <p>@Html.DisplayFor(model => item.TenSach)</p>
-                    <p>@Html.DisplayFor(model => item.TacGia)</p>
-                    <p>@Html.DisplayFor(model => item.TheLoai)</p>
-                    <button type="button" style="margin-bottom: 10px; padding: 5px 10px; font-size: 10px; color: black;">@Html.ActionLink("Thuê", "Details_Book", new { id = item.MaDauSach })</button>
+                </a>
+                <p>@Html.DisplayFor(model => item.TenSach)</p>
+                <p>@Html.DisplayFor(model => item.TacGia)</p>
+                <p>@Html.DisplayFor(model => item.TheLoai)</p>
+            </div>*@
+            <div class="card" style="width: 220px; height:350px; margin-top:10px;">
+                <a href="@Url.Action("Details_Book","User",new { id=item.MaDauSach })">
+                    <img class="card-img-top" src="@Url.Content(item.HinhAnh)" alt="Card image cap" style="height:220px; width:200px;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(model => item.TenSach)</h5>
+                    <p>@Html.DisplayFor(model=>item.TacGia)</p>
+                    <a href="@Url.Action("Details_Book","User",new {id=item.MaDauSach })" class="btn btn-primary" style="color:red;">Xem chi tiết</a>
                 </div>
             </div>
+        </div>
         }
     </div>
 </div>

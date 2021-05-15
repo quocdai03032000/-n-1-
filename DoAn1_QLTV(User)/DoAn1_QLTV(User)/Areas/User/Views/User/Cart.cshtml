@@ -1,0 +1,36 @@
+﻿@model DoAn1_QLTV_User_.Models.Cart
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Areas/User/Views/Shared/_LayoutLoginSuccess.cshtml";
+}
+
+<h2>Cart</h2>
+<hr />
+<hr />
+<div>
+    <div>
+        <img style="width:100%;height:100%;position:fixed;" src="https://2.bp.blogspot.com/-xTpHVyL0kUI/WOMovzHSKCI/AAAAAAAAUfY/JfANdEUyhfoqTBFebfIDeO-bESJ4KOmAACLcB/s1600/libraries.jpg" />
+    </div>
+    <dl class="" style="margin:30px 30px; line-height:40px; position:absolute;">
+        <div class="media">
+            @foreach (var item in Model.Items)
+            {
+                <img src="@Html.DisplayFor(model=>item.rent_Book.HinhAnh)" alt="..." class="img-thumbnail">
+                <div class="media-body" style="margin-left:20px;">
+                    @*css ko vào*@  <h1 class="mt-0" style="font-size:40px; color:aqua; text-align:center; font-style:italic">@Html.DisplayFor(model => item.rent_Book.TenSach)</h1>
+                    <h2 class="mt-0 info_book" style="font-size:25px;"><b>Tác giả:</b> @Html.DisplayFor(model => item.rent_Book.TacGia)</h2>
+                    <h2 class="mt-0 info_book" style="font-size:25px;"><b>Thể loại:</b> @Html.DisplayFor(model => item.rent_Book.TheLoai)</h2>
+                    <h2 class="mt-0 info_book" style="font-size:25px;"><b>Năm xuất bản:</b> @Html.DisplayFor(model => item.rent_Book.NamXuatBan)</h2>
+                    <h2 class="mt-0 info_book" style="font-size:25px;"><b>Nhà xuất bản:</b> @Html.DisplayFor(model => item.rent_Book.NhaXuatBan)</h2>
+                    <h2 class="mt-0 info_book" style="font-size:25px;"><b>Số lượng còn:</b> @Html.DisplayFor(model => item.rent_Book.SoLuong)</h2>
+                    <div class="mt-0" style="font-size:25px; padding-top:10px;">
+                        <label for="name"><b>Số lượng</b></label>
+                        <input type="number" name="numberofBook" value="0" style="width:100px;border-radius:5px; border: solid 1px;">
+                    </div>
+                </div>
+            }
+        </div>
+    </dl>
+</div>
+

@@ -14,7 +14,7 @@ namespace DoAn1_QLTV_User_.Models
     
     public partial class DKyMuonSach
     {
-        public string MaDangKyMuonSach { get; set; }
+        public int MaDangKyMuonSach { get; set; }
         public string MaThe { get; set; }
         public Nullable<int> MaSach { get; set; }
     

@@ -15,6 +15,8 @@ body{
 
 
 
+
+
 /*************************************************/
 /*************************************************/
 /*************************************************/
@@ -125,7 +127,7 @@ body{
 .nameAdmin {
     display: inline-block;
 }
-.nameAdmin > p{
+.nameAdmin > a{
     color:#FFD700 ;  
     text-decoration: none;
     display: block;

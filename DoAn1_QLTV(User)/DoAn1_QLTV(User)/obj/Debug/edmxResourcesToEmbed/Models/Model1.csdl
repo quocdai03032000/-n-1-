@@ -8,6 +8,28 @@
     <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="BaoCaoMuonSach">
+    <Key>
+      <PropertyRef Name="id_BaoCaoMuonSach" />
+    </Key>
+    <Property Name="id_BaoCaoMuonSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayMuon" Type="DateTime" Precision="3" />
+    <Property Name="Mssv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaSach" Type="Int32" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_BaoCaoMuonSach_Sach" FromRole="BaoCaoMuonSach" ToRole="Sach" />
+    <NavigationProperty Name="TheThuVien" Relationship="Self.FK_BaoCaoMuonSach_TheThuVien" FromRole="BaoCaoMuonSach" ToRole="TheThuVien" />
+  </EntityType>
+  <EntityType Name="BaoCaoTraSach">
+    <Key>
+      <PropertyRef Name="id_BaoCaoTraSach" />
+    </Key>
+    <Property Name="id_BaoCaoTraSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayTra" Type="DateTime" Precision="3" />
+    <Property Name="MSSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaSach" Type="Int32" />
+    <NavigationProperty Name="Sach" Relationship="Self.FK_BaoCaoTraSach_Sach" FromRole="BaoCaoTraSach" ToRole="Sach" />
+    <NavigationProperty Name="TheThuVien" Relationship="Self.FK_BaoCaoTraSach_TheThuVien" FromRole="BaoCaoTraSach" ToRole="TheThuVien" />
+  </EntityType>
   <EntityType Name="DangKyTheTV">
     <Key>
       <PropertyRef Name="MaDangKyThe" />
@@ -36,7 +58,7 @@
     <Key>
       <PropertyRef Name="MaDangKyMuonSach" />
     </Key>
-    <Property Name="MaDangKyMuonSach" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaDangKyMuonSach" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaThe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaSach" Type="Int32" />
     <NavigationProperty Name="Sach" Relationship="Self.FK_DKyMuonSach_Sach" FromRole="DKyMuonSach" ToRole="Sach" />
@@ -51,6 +73,8 @@
     <Property Name="MaDauSach" Type="Int32" />
     <Property Name="MaTinhTrangSach" Type="Int32" />
     <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BaoCaoMuonSaches" Relationship="Self.FK_BaoCaoMuonSach_Sach" FromRole="Sach" ToRole="BaoCaoMuonSach" />
+    <NavigationProperty Name="BaoCaoTraSaches" Relationship="Self.FK_BaoCaoTraSach_Sach" FromRole="Sach" ToRole="BaoCaoTraSach" />
     <NavigationProperty Name="DauSach" Relationship="Self.FK_Sach_DauSach" FromRole="Sach" ToRole="DauSach" />
     <NavigationProperty Name="DKyMuonSaches" Relationship="Self.FK_DKyMuonSach_Sach" FromRole="Sach" ToRole="DKyMuonSach" />
     <NavigationProperty Name="Sach_Dang_Muon" Relationship="Self.FK_Sach_Dang_Muon_Sach" FromRole="Sach" ToRole="Sach_Dang_Muon" />
@@ -78,6 +102,8 @@
     <Property Name="NgayLam" Type="DateTime" Precision="3" />
     <Property Name="NgayHetHan" Type="DateTime" Precision="3" />
     <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BaoCaoMuonSaches" Relationship="Self.FK_BaoCaoMuonSach_TheThuVien" FromRole="TheThuVien" ToRole="BaoCaoMuonSach" />
+    <NavigationProperty Name="BaoCaoTraSaches" Relationship="Self.FK_BaoCaoTraSach_TheThuVien" FromRole="TheThuVien" ToRole="BaoCaoTraSach" />
     <NavigationProperty Name="DKyMuonSaches" Relationship="Self.FK_DKyMuonSach_TheThuVien" FromRole="TheThuVien" ToRole="DKyMuonSach" />
     <NavigationProperty Name="Sach_Dang_Muon" Relationship="Self.FK_Sach_Dang_Muon_TheThuVien" FromRole="TheThuVien" ToRole="Sach_Dang_Muon" />
     <NavigationProperty Name="TinhTrang_TheTV" Relationship="Self.FK_TheThuVien_TinhTrang_TheTV" FromRole="TheThuVien" ToRole="TinhTrang_TheTV" />
@@ -98,6 +124,54 @@
     <Property Name="TenTinhTrangSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Saches" Relationship="Self.FK_Sach_TinhTrangSach" FromRole="TinhTrangSach" ToRole="Sach" />
   </EntityType>
+  <Association Name="FK_BaoCaoMuonSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1" />
+    <End Role="BaoCaoMuonSach" Type="Self.BaoCaoMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BaoCaoMuonSach">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoMuonSach_TheThuVien">
+    <End Role="TheThuVien" Type="Self.TheThuVien" Multiplicity="0..1" />
+    <End Role="BaoCaoMuonSach" Type="Self.BaoCaoMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheThuVien">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="BaoCaoMuonSach">
+        <PropertyRef Name="Mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoTraSach_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="0..1" />
+    <End Role="BaoCaoTraSach" Type="Self.BaoCaoTraSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BaoCaoTraSach">
+        <PropertyRef Name="MaSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoTraSach_TheThuVien">
+    <End Role="TheThuVien" Type="Self.TheThuVien" Multiplicity="0..1" />
+    <End Role="BaoCaoTraSach" Type="Self.BaoCaoTraSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheThuVien">
+        <PropertyRef Name="MaThe" />
+      </Principal>
+      <Dependent Role="BaoCaoTraSach">
+        <PropertyRef Name="MSSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Sach_DauSach">
     <End Role="DauSach" Type="Self.DauSach" Multiplicity="0..1" />
     <End Role="Sach" Type="Self.Sach" Multiplicity="*" />
@@ -184,6 +258,8 @@
   </Association>
   <EntityContainer Name="QuanLyThuVienEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Account_Admin" EntityType="Self.Account_Admin" />
+    <EntitySet Name="BaoCaoMuonSaches" EntityType="Self.BaoCaoMuonSach" />
+    <EntitySet Name="BaoCaoTraSaches" EntityType="Self.BaoCaoTraSach" />
     <EntitySet Name="DangKyTheTVs" EntityType="Self.DangKyTheTV" />
     <EntitySet Name="DauSaches" EntityType="Self.DauSach" />
     <EntitySet Name="DKyMuonSaches" EntityType="Self.DKyMuonSach" />
@@ -192,6 +268,22 @@
     <EntitySet Name="TheThuViens" EntityType="Self.TheThuVien" />
     <EntitySet Name="TinhTrang_TheTV" EntityType="Self.TinhTrang_TheTV" />
     <EntitySet Name="TinhTrangSaches" EntityType="Self.TinhTrangSach" />
+    <AssociationSet Name="FK_BaoCaoMuonSach_Sach" Association="Self.FK_BaoCaoMuonSach_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="BaoCaoMuonSach" EntitySet="BaoCaoMuonSaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoMuonSach_TheThuVien" Association="Self.FK_BaoCaoMuonSach_TheThuVien">
+      <End Role="TheThuVien" EntitySet="TheThuViens" />
+      <End Role="BaoCaoMuonSach" EntitySet="BaoCaoMuonSaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoTraSach_Sach" Association="Self.FK_BaoCaoTraSach_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="BaoCaoTraSach" EntitySet="BaoCaoTraSaches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoTraSach_TheThuVien" Association="Self.FK_BaoCaoTraSach_TheThuVien">
+      <End Role="TheThuVien" EntitySet="TheThuViens" />
+      <End Role="BaoCaoTraSach" EntitySet="BaoCaoTraSaches" />
+    </AssociationSet>
     <AssociationSet Name="FK_Sach_DauSach" Association="Self.FK_Sach_DauSach">
       <End Role="DauSach" EntitySet="DauSaches" />
       <End Role="Sach" EntitySet="Saches" />

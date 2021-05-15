@@ -22,11 +22,13 @@
         {
             <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card-pro">
-                    <img src="@Url.Content(item.HinhAnh)" style="height:150px;width:150px" />
+                    <a href="@Url.Action("Details_Book","User",new { id=item.MaDauSach })">
+                        <img src="@Url.Content(item.HinhAnh)" style="height:150px;width:150px" />
+                    </a>
                     <p>@Html.DisplayFor(model => item.TenSach)</p>
                     <p>@Html.DisplayFor(model => item.TacGia)</p>
                     <p>@Html.DisplayFor(model => item.TheLoai)</p>
-                    <button type="button" style="margin-bottom: 10px; padding: 5px 10px; font-size: 10px; color: black;">@Html.ActionLink("Thuê", "Details_Book", new { id = item.MaDauSach })</button>
+                    <button type="button" style="margin-bottom: 10px; padding: 5px 10px; font-size: 10px; border-radius: 5px;">@Html.ActionLink("Xem chi tiết", "Details_Book", new { id = item.MaDauSach })</button>
                 </div>
             </div>
         }

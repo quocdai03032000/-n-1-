@@ -85,39 +85,3 @@ C:\Users\ADMIN\source\repos\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.Data
 C:\Users\ADMIN\source\repos\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.WebData.dll
 C:\Users\ADMIN\source\repos\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.Data.xml
 C:\Users\ADMIN\source\repos\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.WebData.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\DoAn1_QLTV(User).dll.config
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\DoAn1_QLTV(User).dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\DoAn1_QLTV(User).pdb
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Antlr3.Runtime.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\EntityFramework.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\EntityFramework.SqlServer.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Newtonsoft.Json.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Helpers.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Mvc.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Optimization.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Razor.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.Razor.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebGrease.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.Data.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.WebData.dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\EntityFramework.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\EntityFramework.SqlServer.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Helpers.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Mvc.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Optimization.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.Razor.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\System.Web.WebPages.Razor.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Newtonsoft.Json.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Antlr3.Runtime.pdb
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.Data.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\WebMatrix.WebData.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\obj\Debug\DoAn1_QLTV(User).csprojResolveAssemblyReference.cache
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\obj\Debug\DoAn1_QLTV(User).dll
-C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QLTV(User)\DoAn1_QLTV(User)\obj\Debug\DoAn1_QLTV(User).pdb

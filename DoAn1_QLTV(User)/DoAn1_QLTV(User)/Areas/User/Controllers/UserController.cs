@@ -33,10 +33,6 @@ namespace DoAn1_QLTV_User_.Areas.User.Controllers
             }
         }
 
-        public ActionResult Details_Book(int id)
-        {
-            return View(db.DauSaches.Where(s => s.MaDauSach == id).FirstOrDefault()); 
-        }
 
         public ActionResult Main(string text)
         {
@@ -156,5 +152,87 @@ namespace DoAn1_QLTV_User_.Areas.User.Controllers
             else
                 return View("Main");
         }
+
+        //Mượn sách
+        /* [HttpPost]
+         public ActionResult Register_RentBook(DauSach ds)
+         {
+             if (Session["MaThe"] == null)
+             {
+                 return RedirectToAction("Login");
+             }
+             else
+             {
+                 ds = db.DauSaches.Where(m => m.MaDauSach.Equals(ds.MaDauSach)).FirstOrDefault();
+                 DKyMuonSach s = new DKyMuonSach();
+                 s.MaDangKyMuonSach = "abc";
+                 s.MaThe = Session["MaThe"].ToString();
+                 s.MaSach = 1;
+                 db.DKyMuonSaches.Add(s);
+                 db.SaveChanges();
+                 ViewBag.Msg_rentbook = "Mượn thành công";
+                 return RedirectToAction("Register_RentBook");
+             }
+         }
+
+         public ActionResult Details_Book(int id)
+         {
+             return View(db.DauSaches.Where(s => s.MaDauSach.Equals(id)).FirstOrDefault());
+         }*/
+
+        /* public ActionResult Register_RentBook()
+         {
+             return View(db.DKyMuonSaches.ToList());
+         }*/
+
+        
+
+        public Cart GetCart()
+        {
+            Cart cart = Session["Cart"] as Cart;
+            if (cart == null || Session["Cart"] == null)
+            {
+                cart = new Cart();
+                Session["Cart"] = cart;
+            }
+            return cart;
+        }
+
+        public ActionResult AddItem(int id)
+        {
+            var ds = db.DauSaches.SingleOrDefault(s => s.MaDauSach.Equals(id));
+            if (Session["MaThe"] == null)
+            {
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                if (ds != null)
+                {
+                    GetCart().add_item(ds);
+                }
+                return RedirectToAction("Cart", "User");
+            }
+        }
+
+        public ActionResult Cart()
+        {
+            if (Session["Cart"] == null)
+            {
+                return RedirectToAction("Cart", "User");
+            }
+            Cart cart = Session["Cart"] as Cart;
+            return View(cart);
+        }
+
+        public ActionResult Details_Book(int id)
+        {
+            return View(db.DauSaches.Where(s => s.MaDauSach.Equals(id)).FirstOrDefault());
+        }
+
+/*        public ActionResult sach()
+        {            
+            return View(db.Saches.ToList());
+        }*/
     }
 }

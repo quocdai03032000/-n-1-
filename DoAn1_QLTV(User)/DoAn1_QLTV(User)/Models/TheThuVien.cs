@@ -17,6 +17,8 @@ namespace DoAn1_QLTV_User_.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TheThuVien()
         {
+            this.BaoCaoMuonSaches = new HashSet<BaoCaoMuonSach>();
+            this.BaoCaoTraSaches = new HashSet<BaoCaoTraSach>();
             this.DKyMuonSaches = new HashSet<DKyMuonSach>();
             this.Sach_Dang_Muon = new HashSet<Sach_Dang_Muon>();
         }
@@ -29,6 +31,10 @@ namespace DoAn1_QLTV_User_.Models
         public Nullable<System.DateTime> NgayHetHan { get; set; }
         public string GhiChu { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaoCaoMuonSach> BaoCaoMuonSaches { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaoCaoTraSach> BaoCaoTraSaches { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DKyMuonSach> DKyMuonSaches { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

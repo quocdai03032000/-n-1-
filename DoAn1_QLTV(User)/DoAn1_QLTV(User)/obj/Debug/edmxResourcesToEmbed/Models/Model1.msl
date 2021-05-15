@@ -10,6 +10,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BaoCaoMuonSaches">
+      <EntityTypeMapping TypeName="QuanLyThuVienModel.BaoCaoMuonSach">
+        <MappingFragment StoreEntitySet="BaoCaoMuonSach">
+          <ScalarProperty Name="id_BaoCaoMuonSach" ColumnName="id_BaoCaoMuonSach" />
+          <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
+          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaoCaoTraSaches">
+      <EntityTypeMapping TypeName="QuanLyThuVienModel.BaoCaoTraSach">
+        <MappingFragment StoreEntitySet="BaoCaoTraSach">
+          <ScalarProperty Name="id_BaoCaoTraSach" ColumnName="id_BaoCaoTraSach" />
+          <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
+          <ScalarProperty Name="MaSach" ColumnName="MaSach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DangKyTheTVs">
       <EntityTypeMapping TypeName="QuanLyThuVienModel.DangKyTheTV">
         <MappingFragment StoreEntitySet="DangKyTheTV">

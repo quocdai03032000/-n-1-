@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DoAn1_QLTV_User_</RootNamespace>
     <AssemblyName>DoAn1_QLTV%28User%29</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,7 +26,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,7 +55,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -64,8 +62,11 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -110,7 +111,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -144,6 +144,13 @@
     <Compile Include="Models\Account_Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaoCaoMuonSach.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaoCaoTraSach.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\DangKyTheTV.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -194,6 +201,63 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\imgsach\1.jpg" />
+    <Content Include="Content\imgsach\10.jpg" />
+    <Content Include="Content\imgsach\11.jpg" />
+    <Content Include="Content\imgsach\12.jpg" />
+    <Content Include="Content\imgsach\13.jpg" />
+    <Content Include="Content\imgsach\14.png" />
+    <Content Include="Content\imgsach\15.jpg" />
+    <Content Include="Content\imgsach\16.png" />
+    <Content Include="Content\imgsach\163484991_272234901097714_8597327568031094687_n.jpg" />
+    <Content Include="Content\imgsach\17.jpg" />
+    <Content Include="Content\imgsach\18.jpg" />
+    <Content Include="Content\imgsach\19.jpg" />
+    <Content Include="Content\imgsach\2.png" />
+    <Content Include="Content\imgsach\20.jpeg" />
+    <Content Include="Content\imgsach\21.jpg" />
+    <Content Include="Content\imgsach\22.jpg" />
+    <Content Include="Content\imgsach\23.jpg" />
+    <Content Include="Content\imgsach\24.jpeg" />
+    <Content Include="Content\imgsach\25.png" />
+    <Content Include="Content\imgsach\26.jpg" />
+    <Content Include="Content\imgsach\27.jpg" />
+    <Content Include="Content\imgsach\28.jpg" />
+    <Content Include="Content\imgsach\29.jpg" />
+    <Content Include="Content\imgsach\3.jpg" />
+    <Content Include="Content\imgsach\30.png" />
+    <Content Include="Content\imgsach\31.jpg" />
+    <Content Include="Content\imgsach\32.jpg" />
+    <Content Include="Content\imgsach\33.jpg" />
+    <Content Include="Content\imgsach\34.jpg" />
+    <Content Include="Content\imgsach\35.jpg" />
+    <Content Include="Content\imgsach\36.jpg" />
+    <Content Include="Content\imgsach\37.jpg" />
+    <Content Include="Content\imgsach\38.jpg" />
+    <Content Include="Content\imgsach\39.jpg" />
+    <Content Include="Content\imgsach\4.jpg" />
+    <Content Include="Content\imgsach\40.jpg" />
+    <Content Include="Content\imgsach\41.jpg" />
+    <Content Include="Content\imgsach\42.jpg" />
+    <Content Include="Content\imgsach\43.jpg" />
+    <Content Include="Content\imgsach\44.jpg" />
+    <Content Include="Content\imgsach\45.jpg" />
+    <Content Include="Content\imgsach\46.jpg" />
+    <Content Include="Content\imgsach\47.jpg" />
+    <Content Include="Content\imgsach\48.jpg" />
+    <Content Include="Content\imgsach\49.jpg" />
+    <Content Include="Content\imgsach\5.jpg" />
+    <Content Include="Content\imgsach\50.jpg" />
+    <Content Include="Content\imgsach\51.jpg" />
+    <Content Include="Content\imgsach\52.jpg" />
+    <Content Include="Content\imgsach\53.jpg" />
+    <Content Include="Content\imgsach\54.png" />
+    <Content Include="Content\imgsach\55.jpg" />
+    <Content Include="Content\imgsach\6.jpg" />
+    <Content Include="Content\imgsach\7.jpg" />
+    <Content Include="Content\imgsach\8.jpg" />
+    <Content Include="Content\imgsach\81a4a9845450a80ef141.jpg" />
+    <Content Include="Content\imgsach\9.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -210,13 +274,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Areas\User\Views\User\MainUser.cshtml" />
@@ -227,6 +284,17 @@
     <Content Include="Areas\User\Views\User\Register.cshtml" />
     <Content Include="Areas\User\Views\User\ChangePass.cshtml" />
     <Content Include="Areas\User\Views\User\Detail_Account.cshtml" />
+    <Content Include="Areas\User\Views\User\Register_RentBook.cshtml" />
+    <Content Include="Areas\User\Views\User\ShowItem.cshtml" />
+    <Content Include="Areas\User\Views\User\Cart.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\User\Views\User\sach.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
