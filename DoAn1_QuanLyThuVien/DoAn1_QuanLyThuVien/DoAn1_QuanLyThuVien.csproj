@@ -299,6 +299,8 @@
     <Content Include="Areas\Admin\Views\Main\ThemTheTV.cshtml" />
     <Content Include="Areas\User\Views\Main\ChiTietSach.cshtml" />
     <Content Include="Areas\User\Views\Main\Cart.cshtml" />
+    <Content Include="Areas\User\Views\Main\ChangePass.cshtml" />
+    <Content Include="Areas\User\Views\Main\XemThongTinChiTiet.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\IMG_scripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

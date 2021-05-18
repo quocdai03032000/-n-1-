@@ -48,11 +48,31 @@
                     <a href="@Url.Action("Contact","Main")"><i class="fas fa-phone-alt"></i> Liên hệ</a>
                 </div>
                 <div class="nameAdmin">
-                    <a href="@Url.Action("Login","Main")"> <i class="fas fa-user-circle icon admin"></i> Đăng nhập</a>
+                    @{
+                        if (Session["User"] != null)
+                        {
+                            <a href="@Url.Action("Login","Main")"> <i class="fas fa-user-circle icon admin"></i> @Session["User"]</a>
+                                <ul class="submenu_admin">
+                                    <li><a href="@Url.Action("ChangePass","Main")">Đổi mật khẩu</a></li>
+                                    <li><a href="@Url.Action("Logout","Main")">Đăng xuất</a></li>
+                                </ul>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login","Main")"> <i class="fas fa-user-circle icon admin"></i> Đăng nhập</a>
+                                <ul class="submenu_admin">
+                                    <li><a href="@Url.Action("Register","Main")">Đăng ký</a></li>
+                                    @*<li><a>Đăng xuất</a></li>*@
+                                </ul>
+
+                        }
+                    }
+                    
+                    @*<a href="@Url.Action("Login","Main")"> <i class="fas fa-user-circle icon admin"></i> Đăng nhập</a>
                     <ul class="submenu_admin">
                         <li><a href="@Url.Action("Register","Main")">Đăng ký</a></li>
-                        @*<li><a>Đăng xuất</a></li>*@
-                    </ul>
+                        <li><a>Đăng xuất</a></li>*
+                    </ul>*@
                 </div>
 
             </div>

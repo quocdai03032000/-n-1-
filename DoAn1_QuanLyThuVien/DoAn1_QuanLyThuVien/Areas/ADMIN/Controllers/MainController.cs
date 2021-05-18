@@ -29,7 +29,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             else
             {
                 Session["Admin"] = ad.User;
-                return RedirectToAction("Main", "Main");
+                return RedirectToAction("DauSach", "Main");
             }
         }
 
@@ -375,6 +375,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         public ActionResult TraSach(int id)
         {
             var del = database.Sach_Dang_Muon.Where(a => a.MaSachMuon == id).SingleOrDefault();
+            string mssv = del.MaThe;
             //thêm vào báo cáo
             BaoCaoTraSach baocao = new Models.BaoCaoTraSach();
             baocao.MaSach = del.MaSach;
@@ -386,10 +387,20 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             //Cập tình trạng sách
             var sach = database.Saches.Where(a => a.id == del.MaSach).FirstOrDefault();
             sach.MaTinhTrangSach = 1;
+            
 
             //xoá sách
             database.Sach_Dang_Muon.Remove(del);
             database.SaveChanges();
+
+            //kiểm tra và cập nhật lại tình trạng thẻ TV
+            var check = database.Sach_Dang_Muon.Where(a => a.MaThe == mssv).FirstOrDefault();
+            if(check == null)
+            {
+                var the = database.TheThuViens.Where(a => a.MaThe == mssv).SingleOrDefault();
+                the.MaTinhTrang = 2;
+                database.SaveChanges();
+            }
             return RedirectToAction("QLMuonTraSach", "Main");
         }
 
@@ -436,12 +447,26 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         // xoá đối tượng ra khỏi bảng đăng ký mượn sách
         [HttpGet]
         public ActionResult Xoa_DSDangKy_MuonSach(int id)
-        {           
+        {   
+            var flag = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).SingleOrDefault();
             var del = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).SingleOrDefault();
-            database.DKyMuonSaches.Remove(del);
             //Cập tình trạng sách
-            var sach = database.Saches.Where(a => a.id == del.MaSach).FirstOrDefault();
+            var sach = database.Saches.Where(a => a.id == del.MaSach).FirstOrDefault();                      
             sach.MaTinhTrangSach = 1;
+            //         
+            string mssv = flag.MaThe;
+            database.DKyMuonSaches.Remove(del);
+            database.SaveChanges();
+            // kiểm tra và cập nhật lại tình trạng thẻ
+
+            var check1 = database.DKyMuonSaches.Where(a => a.MaThe == mssv).FirstOrDefault();
+            var check2 = database.Sach_Dang_Muon.Where(a => a.MaThe == mssv).FirstOrDefault();
+            if (check1 == null && check2 == null)
+            {
+                var the = database.TheThuViens.Where(a => a.MaThe == mssv).SingleOrDefault();
+                the.MaTinhTrang = 2;
+            }
+            //
             database.SaveChanges();
             return RedirectToAction("DSDangKy_MuonSach", "Main");
         }      

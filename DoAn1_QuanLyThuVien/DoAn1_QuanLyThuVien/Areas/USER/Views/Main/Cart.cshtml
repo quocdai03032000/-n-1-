@@ -6,6 +6,7 @@
 }
 
 <body>
+    <h4 class="muonSachThanhCong">@ViewBag.ThueSachMess</h4>
     <!-- Cart Start -->
     <div class="cart-page">
         <div class="container-fluid">
@@ -30,13 +31,12 @@
                                             <tr>
                                                 <td>
                                                     <div class="img">
-                                                        <a href="#"><img src="../img/1.jpg" alt="Image"></a>
+                                                        <a href="#"><img src="@Url.Content(item.HinhAnh)" alt="Image"></a>
                                                         <p>@Html.DisplayFor(mode => item.sach.DauSach.TenSach)</p>
                                                     </div>
                                                 </td>
                                                 <td>1</td>
-
-                                                <td><button><i class="fa fa-trash"></i></button></td>
+                                                <td><a class="XoaCart" href="@Url.Action("RemoveCart","Main",new { id = item.sach.id})"><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                         }                                        
                                     </tbody>
@@ -50,18 +50,43 @@
                     <div class="cart-page-inner">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="cart-summary">
-                                    <div class="cart-content">
-                                        <h1>Yêu cầu mượn</h1>
-                                        <p>MSSV<span>18dh110219</span></p>
-                                        <p>Họ tên<span>Trần Quốc Đại</span></p>
-                                        <p>Ngày mượn<span>5/5/2021</span></p>
-                                        <h2>Ngày trả<span>20/5/2021</span></h2>
+                                @using (Html.BeginForm("ThueSach", "Main"))
+                                {
+                                    <div class="cart-summary">
+                                        <div class="cart-content">
+                                            <h1>Yêu cầu mượn</h1>
+                                            <p>MSSV<span>@ViewBag.MSSV</span></p>
+                                            <p>Họ tên<span>@ViewBag.TenUse</span></p>
+                                            <p>Ngày mượn<span>@DateTime.Now</span></p>
+                                            <h2>Ngày trả<span>@DateTime.Now.AddDays(15)</span></h2>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <button>MƯỢN</button>
+                                        </div>
                                     </div>
-                                    <div class="cart-btn">
-                                        <button>MƯỢN</button>
-                                    </div>
-                                </div>
+                                    if(Session["MessThueSach"]=="suss")
+                                    {
+                                        <script type="text/javascript">
+                                            alert('Đăng ký mượn sách thành công!');
+                                        </script>
+                                        Session["MessThueSach"] = null;
+                                    }
+                                    else if (Session["MessThueSach"] == "fail")
+                                    {
+                                        <script type="text/javascript">
+                                            alert('Không thể mượn do bạn chưa trả sách \nVui lòng trả hết sách trước khi mượn!');
+                                        </script>
+                                        Session["MessThueSach"] = null;
+                                    }
+                                    else if (Session["FailAddCart"] == "fail")
+                                    {
+                                        <script type="text/javascript">
+                                            alert('Chỉ được mượn tối đa 3 quyển sách !')
+                                        </script>
+                                        Session["FailAddCart"] = null;
+                                    }
+                                }
+                                
                             </div>
                         </div>
                     </div>
@@ -73,6 +98,7 @@
 
 
 </body>
+
 </html>
 
 
