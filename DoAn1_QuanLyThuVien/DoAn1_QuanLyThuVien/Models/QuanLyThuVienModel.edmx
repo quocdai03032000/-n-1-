@@ -45,6 +45,7 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayLam" Type="datetime" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DauSach">
           <Key>
@@ -107,6 +108,7 @@
           <Property Name="NgayLam" Type="datetime" />
           <Property Name="NgayHetHan" Type="datetime" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TinhTrang_TheTV">
           <Key>
@@ -292,6 +294,7 @@
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayLam" Type="DateTime" Precision="3" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DauSach">
           <Key>
@@ -366,6 +369,7 @@
           <NavigationProperty Name="DKyMuonSaches" Relationship="Self.FK_DKyMuonSach_TheThuVien" FromRole="TheThuVien" ToRole="DKyMuonSach" />
           <NavigationProperty Name="Sach_Dang_Muon" Relationship="Self.FK_Sach_Dang_Muon_TheThuVien" FromRole="TheThuVien" ToRole="Sach_Dang_Muon" />
           <NavigationProperty Name="TinhTrang_TheTV" Relationship="Self.FK_TheThuVien_TinhTrang_TheTV" FromRole="TheThuVien" ToRole="TinhTrang_TheTV" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TinhTrang_TheTV">
           <Key>
@@ -552,6 +556,7 @@
           <EntitySetMapping Name="DangKyTheTVs">
             <EntityTypeMapping TypeName="QuanLyThuVienModel.DangKyTheTV">
               <MappingFragment StoreEntitySet="DangKyTheTV">
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="MaDangKyThe" ColumnName="MaDangKyThe" />
                 <ScalarProperty Name="MaThe" ColumnName="MaThe" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -618,6 +623,7 @@
           <EntitySetMapping Name="TheThuViens">
             <EntityTypeMapping TypeName="QuanLyThuVienModel.TheThuVien">
               <MappingFragment StoreEntitySet="TheThuVien">
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="MaThe" ColumnName="MaThe" />
                 <ScalarProperty Name="MaTinhTrang" ColumnName="MaTinhTrang" />
                 <ScalarProperty Name="Password" ColumnName="Password" />

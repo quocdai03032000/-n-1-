@@ -33,9 +33,9 @@ namespace DoAn1_QuanLyThuVien.Models
         public Nullable<int> SoLuong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sach> Saches { get; set; }
         [NotMapped]
         public HttpPostedFileBase imageUploader { get; set; }
 
+        public virtual ICollection<Sach> Saches { get; set; }
     }
 }

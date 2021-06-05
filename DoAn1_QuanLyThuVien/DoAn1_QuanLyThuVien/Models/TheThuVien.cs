@@ -28,6 +28,7 @@ namespace DoAn1_QuanLyThuVien.Models
         public Nullable<System.DateTime> NgayLam { get; set; }
         public Nullable<System.DateTime> NgayHetHan { get; set; }
         public string GhiChu { get; set; }
+        public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DKyMuonSach> DKyMuonSaches { get; set; }

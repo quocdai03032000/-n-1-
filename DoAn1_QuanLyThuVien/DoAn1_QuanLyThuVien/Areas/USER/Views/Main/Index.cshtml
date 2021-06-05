@@ -1,4 +1,7 @@
-﻿@model IEnumerable<DoAn1_QuanLyThuVien.Models.DauSach>
+﻿@*@model IEnumerable<DoAn1_QuanLyThuVien.Models.DauSach>*@
+@using DoAn1_QuanLyThuVien.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DauSach>
 @{
     ViewBag.Title = "Trang chủ";
    
@@ -104,6 +107,17 @@
             </div>
         </div>
 
+        <div class="PhanTrang">
+            <h4>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</h4>
+            <div class="PhanTrang_menu">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+
+            </div>
+        </div>
+
+
+
+
     <!-- ***************************** -->
     <!-- fotter start -->
         <div class="footer">
@@ -160,9 +174,9 @@
     <!-- Footer End -->
 
     }
-
-
-
+ 
+    
+   
     
 </body>
 

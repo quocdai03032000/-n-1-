@@ -4,18 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DoAn1_QuanLyThuVien.Models;
+using System.Net;
+using System.Collections.Specialized;
+using System.Text;
+using PagedList;
+using PagedList.Mvc;
+
 namespace DoAn1_QuanLyThuVien.Areas.User.Controllers
 {
     public class MainController : Controller
     {
         QuanLyThuVienEntities database = new QuanLyThuVienEntities();
-        public ActionResult Index(string text)
+        public ActionResult Index(string text,int ?page)
         {
+            int pageSize = 16;
+            int pageNum = (page ?? 1);
+            var dausach = database.DauSaches.ToList();
+            var dausach_search = database.DauSaches.Where(s => s.TenSach.Contains(text));
             if (text == null)
-                return View(database.DauSaches.ToList());
+            {               
+                return View(dausach.ToPagedList(pageNum, pageSize));
+            }
+                
             else
-            {
-                return View(database.DauSaches.Where(s => s.TenSach.Contains(text) || s.TheLoai.Contains(text)).ToList());
+            {                
+                return View(dausach_search);
             }
         }
 
@@ -69,9 +82,10 @@ namespace DoAn1_QuanLyThuVien.Areas.User.Controllers
         {
             DangKyTheTV theTV = new DangKyTheTV();
             return View(theTV);
-        }
+        }       
+
         [HttpPost]
-        public ActionResult Register(DangKyTheTV theTV,string ConfirmPass)
+        public ActionResult Register(DangKyTheTV theTV,string ConfirmPass, string email)
         {
             var CheckTheTV = database.DangKyTheTVs.Where(a => a.MaThe == theTV.MaThe).SingleOrDefault();
             var check = database.TheThuViens.Where(a => a.MaThe == theTV.MaThe).SingleOrDefault();       
@@ -89,7 +103,7 @@ namespace DoAn1_QuanLyThuVien.Areas.User.Controllers
                 {
                     ViewBag.Error = "Đã tồn tại MSSV này!";
                     return View("Register");
-                }
+                }                
             }
             else
             {

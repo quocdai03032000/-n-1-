@@ -40,6 +40,7 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NgayLam" Type="DateTime" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DauSach">
     <Key>
@@ -114,6 +115,7 @@
     <NavigationProperty Name="DKyMuonSaches" Relationship="Self.FK_DKyMuonSach_TheThuVien" FromRole="TheThuVien" ToRole="DKyMuonSach" />
     <NavigationProperty Name="Sach_Dang_Muon" Relationship="Self.FK_Sach_Dang_Muon_TheThuVien" FromRole="TheThuVien" ToRole="Sach_Dang_Muon" />
     <NavigationProperty Name="TinhTrang_TheTV" Relationship="Self.FK_TheThuVien_TinhTrang_TheTV" FromRole="TheThuVien" ToRole="TinhTrang_TheTV" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="TinhTrang_TheTV">
     <Key>

@@ -952,6 +952,29 @@ tbody > tr:hover{
 .CTT_body{
     min-height:80vh;
 }
+
+/*-------- Phân trang -------*/
+.PhanTrang h4 {
+    font-family: "Abeezee",sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
+}
+.PhanTrang_menu{
+    width:100px;
+    margin: 0 auto;
+}
+.PhanTrang_menu ul li{
+    font-size:25px;
+    padding:10px;
+    color: #394450;
+  
+}
+pagination-container {
+    background-color: #394450;
+}
+
 /**********************************/
 /**********************************/
 /**********************************/

@@ -40,6 +40,7 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayLam" Type="datetime" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DauSach">
     <Key>
@@ -102,6 +103,7 @@
     <Property Name="NgayLam" Type="datetime" />
     <Property Name="NgayHetHan" Type="datetime" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TinhTrang_TheTV">
     <Key>

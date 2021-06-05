@@ -19,5 +19,6 @@ namespace DoAn1_QuanLyThuVien.Models
         public string Password { get; set; }
         public string HoTen { get; set; }
         public Nullable<System.DateTime> NgayLam { get; set; }
+        public string email { get; set; }
     }
 }

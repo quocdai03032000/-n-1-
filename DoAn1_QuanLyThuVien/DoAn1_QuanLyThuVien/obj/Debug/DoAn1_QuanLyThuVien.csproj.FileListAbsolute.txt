@@ -357,3 +357,9 @@ C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.dll
 C:\Users\Admin\OneDrive\Máy tính\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.pdb
 C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\obj\Debug\DoAn1_QuanLyThuVien.csprojResolveAssemblyReference.cache
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\Common.dll
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\Common.pdb
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\PagedList.dll
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\PagedList.Mvc.dll
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\PagedList.xml
+C:\Users\Tran Quoc Dai\Desktop\Study\DoAn1\DoAn1_QuanLyThuVien\DoAn1_QuanLyThuVien\bin\PagedList.Mvc.xml

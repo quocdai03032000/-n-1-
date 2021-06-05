@@ -38,6 +38,7 @@
     <EntitySetMapping Name="DangKyTheTVs">
       <EntityTypeMapping TypeName="QuanLyThuVienModel.DangKyTheTV">
         <MappingFragment StoreEntitySet="DangKyTheTV">
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="MaDangKyThe" ColumnName="MaDangKyThe" />
           <ScalarProperty Name="MaThe" ColumnName="MaThe" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -104,6 +105,7 @@
     <EntitySetMapping Name="TheThuViens">
       <EntityTypeMapping TypeName="QuanLyThuVienModel.TheThuVien">
         <MappingFragment StoreEntitySet="TheThuVien">
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="MaThe" ColumnName="MaThe" />
           <ScalarProperty Name="MaTinhTrang" ColumnName="MaTinhTrang" />
           <ScalarProperty Name="Password" ColumnName="Password" />

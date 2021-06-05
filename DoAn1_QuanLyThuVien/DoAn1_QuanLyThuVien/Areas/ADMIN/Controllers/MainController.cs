@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DoAn1_QuanLyThuVien.Models;
 using System.IO;
+using Common;
 
 namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
 {
@@ -349,17 +350,27 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         {
             //Thêm thẻ thư viện từ bảng đăng ký thẻ sang thẻ thư viện
             var DangKyTheTV = database.DangKyTheTVs.Where(a => a.MaDangKyThe == id).SingleOrDefault();
+            string Email = DangKyTheTV.email;
             var TheTV = new TheThuVien();
             TheTV.MaThe = DangKyTheTV.MaThe;
             TheTV.MaTinhTrang = 2;
             TheTV.Password = DangKyTheTV.Password;
             TheTV.HoTen = DangKyTheTV.HoTen;
             TheTV.NgayLam = DangKyTheTV.NgayLam;
-            TheTV.NgayHetHan = DateTime.Now.AddYears(4);            
+            TheTV.NgayHetHan = DateTime.Now.AddYears(4);
+            TheTV.email = DangKyTheTV.email;
             database.TheThuViens.Add(TheTV);
             //Đồng thời xoá thẻ tv trong bảng đăng ký thẻ tv
             database.DangKyTheTVs.Remove(DangKyTheTV);
             database.SaveChanges();
+
+            //Gửi mail khi tài khoản được kích hoạt
+
+            string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/Admin/template/neworder.html"));
+            content = content.Replace("{{CustommerName}}", "Test send mail, mic check mic check");
+            new MailHelper().SendMail(Email, "Kích hoạt tài khoản thành công", content);
+
+            //về lại trang
             return RedirectToAction("DsDangKyTheTV", "Main");
         }
 

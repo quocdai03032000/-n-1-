@@ -43,6 +43,7 @@
                         <td>Mã thẻ</td>
                         <td>Mật khẩu</td>
                         <td>Họ tên</td>
+                        <td>Email</td>
                         <td>Ngày đăng ký</td>
                         <td class="table_DauSach_ChucNang"></td>
                     </tr>
@@ -54,6 +55,7 @@
                             <td>@Html.DisplayFor(a=>item.MaThe)</td>
                             <td>@Html.DisplayFor(a=>item.Password)</td>
                             <td>@Html.DisplayFor(a => item.HoTen)</td>
+                            <td>@Html.DisplayFor(a => item.email)</td>
                             <td>@Html.DisplayFor(a => item.NgayLam)</td>
                             <td class="theTV-btn">                                
                                 <a class="suss" href="@Url.Action("ThemTheTV_form_DS","Main",new {id=item.MaDangKyThe})"><i class="fas fa-check"></i></a>
