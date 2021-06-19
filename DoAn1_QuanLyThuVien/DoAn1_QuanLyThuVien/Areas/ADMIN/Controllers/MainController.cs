@@ -13,6 +13,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
     {
         QuanLyThuVienEntities database = new QuanLyThuVienEntities();
 
+        #region ĐĂNG NHẬP - ĐĂNG XUẤT - ĐỔI PASS
         /******** Login ************/
         public ActionResult Index()
         {
@@ -76,6 +77,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
 
         }
 
+#endregion
 
         /******** Main ************/
         public ActionResult Main()
@@ -90,14 +92,16 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
 
         }
 
+        #region QUẢN LÝ ĐẦU SÁCH
         /* ---- Đầu sách -----*/
         public ActionResult DauSach(string _name)
         {
+            var dausach = database.DauSaches.ToList().OrderByDescending(s => s.MaDauSach).ToList();
             if (Session["Admin"] != null)
             {
                 if (_name == null)
                 {
-                    return View(database.DauSaches.ToList());
+                    return View(dausach);
                 }
                 else
                     return View(database.DauSaches.Where(s => s.TenSach.Contains(_name)).ToList());
@@ -190,6 +194,8 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             return RedirectToAction("DauSach", "Main");
 
         }
+        #endregion
+
 
         /*----- Sách -----*/
         public ActionResult Sach(string _name)
@@ -209,34 +215,78 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         /*----- Thêm Sách -----*/
         public ActionResult ThemSach(int id)
         {
+            var flag = database.DauSaches.Where(a => a.MaDauSach == id).SingleOrDefault();
             ViewBag.Id_dauSach = id.ToString();
+            ViewBag.Ten_dauSach = flag.TenSach;
             return View();
         }
         [HttpPost]
-        public ActionResult ThemSach(int id, string sks)
+        public ActionResult ThemSach(int id, string sks, string GhiChu)
         {
-            int soKiemSoat = int.Parse(sks);
             var DauSach = database.DauSaches.Where(a => a.MaDauSach == id).SingleOrDefault();
-            var check = database.Saches.Where(a => a.MaDauSach == id && a.SoKiemSoat == soKiemSoat).SingleOrDefault();
-            if (check == null)
+            var checkSoLuong = database.Saches.Where(a => a.MaDauSach == id).Count();
+            int soLuongSach = int.Parse(sks);
+            if(checkSoLuong==0)
             {
-                var a = new Sach();
-                a.MaDauSach = id;
-                a.MaTinhTrangSach = 1;
-                a.SoKiemSoat = soKiemSoat;
+                for(int i=1; i<=soLuongSach;i++)
+                {
+                    var a = new Sach();
+                    a.MaDauSach = id;
+                    a.MaTinhTrangSach = 1;
+                    a.SoKiemSoat = i;
+                    a.GhiChu = GhiChu;
+                    database.Saches.Add(a);
+                }
                 /*----- Cap nhat so luong -----*/
-                DauSach.SoLuong += 1;
-                database.Saches.Add(a);
+                DauSach.SoLuong += soLuongSach;
+                
                 database.SaveChanges();
                 ViewBag.ThemSach_message_suss = "Thêm thành công!";
                 return RedirectToAction("DauSach", "Main");
             }
             else
             {
-                ViewBag.ThemSach_message_error = "Trùng số kiểm soát, hãy nhập lại!";
-                return View("ThemSach");
+                for(int i = checkSoLuong+1; i<=checkSoLuong+soLuongSach; i++)
+                {
+                    var a = new Sach();
+                    a.MaDauSach = id;
+                    a.MaTinhTrangSach = 1;
+                    a.SoKiemSoat = i;
+                    database.Saches.Add(a);
+                }
+                /*----- Cap nhat so luong -----*/
+                DauSach.SoLuong += soLuongSach;
+                
+                database.SaveChanges();
+                ViewBag.ThemSach_message_suss = "Thêm thành công!";
+                return RedirectToAction("DauSach", "Main");
             }
 
+
+
+            #region Chức năng cũ, thêm sách nhập số kiểm soát bằng tay
+            //int soKiemSoat = int.Parse(sks);
+            //var DauSach = database.DauSaches.Where(a => a.MaDauSach == id).SingleOrDefault();
+            //var check = database.Saches.Where(a => a.MaDauSach == id && a.SoKiemSoat == soKiemSoat).SingleOrDefault();
+            //if (check == null)
+            //{
+            //    var a = new Sach();
+            //    a.MaDauSach = id;
+            //    a.MaTinhTrangSach = 1;
+            //    a.SoKiemSoat = soKiemSoat;
+            //    /*----- Cap nhat so luong -----*/
+            //    DauSach.SoLuong += 1;
+            //    database.Saches.Add(a);
+            //    database.SaveChanges();
+            //    ViewBag.ThemSach_message_suss = "Thêm thành công!";
+            //    return RedirectToAction("DauSach", "Main");
+            //}
+            //else
+            //{
+            //    ViewBag.ThemSach_message_error = "Trùng số kiểm soát, hãy nhập lại!";
+            //    return View("ThemSach");
+            //}
+            #endregion
         }
         /*----- Xoá sách -----*/
         [HttpGet]
@@ -367,7 +417,8 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             //Gửi mail khi tài khoản được kích hoạt
 
             string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/Admin/template/neworder.html"));
-            content = content.Replace("{{CustommerName}}", "Test send mail, mic check mic check");
+            content = content.Replace("{{CustommerName}}", DangKyTheTV.MaThe);
+            content = content.Replace("{{CustommerPass}}", DangKyTheTV.Password);
             new MailHelper().SendMail(Email, "Kích hoạt tài khoản thành công", content);
 
             //về lại trang
@@ -408,20 +459,21 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             var del = database.Sach_Dang_Muon.Where(a => a.MaSachMuon == id).SingleOrDefault();
             string mssv = del.MaThe;
             //thêm vào báo cáo
-            BaoCaoTraSach baocao = new Models.BaoCaoTraSach();
+            BaoCaoTraSach baocao = new BaoCaoTraSach();
             baocao.MaSach = del.MaSach;
             baocao.TenSach = del.Sach.DauSach.TenSach;
             baocao.HoTen = del.TheThuVien.HoTen;
-            baocao.MSSV = del.MaThe;            
+            baocao.MSSV = del.MaThe;
             baocao.NgayTra = DateTime.Now;
             baocao.NgayMuon = del.NgayMuon;
             database.BaoCaoTraSaches.Add(baocao);
 
+
             //Cập tình trạng sách
             var sach = database.Saches.Where(a => a.id == del.MaSach).FirstOrDefault();
             sach.MaTinhTrangSach = 1;
-            
 
+            database.SaveChanges();
             //xoá sách
             database.Sach_Dang_Muon.Remove(del);
             database.SaveChanges();
@@ -458,7 +510,6 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Them_DSDangKy_MuonSach(int id)
         {
-            
             var DK_MuonSach = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).SingleOrDefault();
             var Sach_muon = new Sach_Dang_Muon();
             Sach_muon.MaThe = DK_MuonSach.MaThe;
@@ -467,17 +518,44 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             database.Sach_Dang_Muon.Add(Sach_muon);
 
             //Them vao báo cáo
-            BaoCaoMuonSach baocao = new Models.BaoCaoMuonSach();
+            string mssv = DK_MuonSach.MaThe;
+            string tenSach = DK_MuonSach.Sach.DauSach.TenSach;
+            string hoTen = DK_MuonSach.TheThuVien.HoTen;
+            var maSach = DK_MuonSach.MaSach;
+            //----
+            var baocao = new BaoCaoMuonSach();
             baocao.NgayMuon = DateTime.Now;
-            baocao.Mssv = DK_MuonSach.MaThe;
-            baocao.TenSach = DK_MuonSach.Sach.DauSach.TenSach;
-            baocao.HoTen = DK_MuonSach.TheThuVien.HoTen;
-            baocao.MaSach = DK_MuonSach.MaSach;
+            baocao.Mssv = mssv;
+            baocao.TenSach = tenSach;
+            baocao.HoTen = hoTen;
+            baocao.MaSach = maSach;
             database.BaoCaoMuonSaches.Add(baocao);
-           
+
             database.DKyMuonSaches.Remove(DK_MuonSach);
             database.SaveChanges();
             return RedirectToAction("DSDangKy_MuonSach", "Main");
+
+
+
+            //var DK_MuonSach = database.DKyMuonSaches.Where(a => a.MaDangKyMuonSach == id).FirstOrDefault();
+            //var Sach_muon = new Sach_Dang_Muon();
+            //Sach_muon.MaThe = DK_MuonSach.MaThe;
+            //Sach_muon.MaSach = DK_MuonSach.MaSach;
+            //Sach_muon.NgayMuon = DateTime.Now;
+            //database.Sach_Dang_Muon.Add(Sach_muon);
+            //database.SaveChanges();
+            //Them vao báo cáo
+            //BaoCaoMuonSach baocao = new Models.BaoCaoMuonSach();
+            //baocao.NgayMuon = DateTime.Now;
+            //baocao.Mssv = DK_MuonSach.MaThe;
+            //baocao.TenSach = DK_MuonSach.Sach.DauSach.TenSach;
+            //baocao.HoTen = DK_MuonSach.TheThuVien.HoTen;
+            //baocao.MaSach = DK_MuonSach.MaSach;
+            //database.BaoCaoMuonSaches.Add(baocao);
+            //database.SaveChanges();
+            //database.DKyMuonSaches.Remove(DK_MuonSach);
+            //database.SaveChanges();
+            //return RedirectToAction("DSDangKy_MuonSach", "Main");
         }
         // xoá đối tượng ra khỏi bảng đăng ký mượn sách
         [HttpGet]
@@ -548,7 +626,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             ViewBag.slSachMuon = slSachMuon.ToString();
             ViewBag.slSachHong = slSachHong.ToString();
             ViewBag.slSachMat = slSachMat.ToString();
-            return View(database.Saches.Where(a => a.MaTinhTrangSach == 4).ToList());
+            return View();
         }
 
         public ActionResult ThemTheTV()
@@ -556,7 +634,7 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ThemTheTV(string MSSV,string HoTen)
+        public ActionResult ThemTheTV(string MSSV,string HoTen, string email)
         {
             var check = database.TheThuViens.Where(a => a.MaThe == MSSV).FirstOrDefault();
             if(check==null)
@@ -564,6 +642,8 @@ namespace DoAn1_QuanLyThuVien.Areas.Admin.Controllers
                 TheThuVien theTV = new TheThuVien();
                 theTV.MaThe = MSSV;
                 theTV.HoTen = HoTen;
+                theTV.email = email;
+
                 theTV.NgayLam = DateTime.Now;
                 theTV.NgayHetHan = DateTime.Now.AddYears(4);
                 theTV.MaTinhTrang = 2;

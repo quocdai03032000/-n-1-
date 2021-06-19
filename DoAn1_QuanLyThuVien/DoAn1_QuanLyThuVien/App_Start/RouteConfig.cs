@@ -14,19 +14,24 @@ namespace DoAn1_QuanLyThuVien
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //routes.MapRoute(
-            //    name: "User",
+            //    name: "user",
             //    url: "{area}/{controller}/{action}",
-            //    defaults: new {area ="User",controller = "MainUser", action = "Index" }
+            //    defaults: new { area = "User", controller = "MainUser", action = "Index.cshtml" }
 
             //);
 
 
-            routes.MapRoute(
-                "User",
-                "User/{controller}/{action}/{id}",
-                new { Controller = "MainUser", action = "Index", id = UrlParameter.Optional }
-                );
+            //routes.MapRoute(
+            //    "User",
+            //    "User/{controller}/{action}/{id}",
+            //    new { Controller = "MainUser", action = "Index", id = UrlParameter.Optional }
+            //    );
 
+            routes.MapRoute(
+                name: "user",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "MainUser", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

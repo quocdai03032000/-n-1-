@@ -33,7 +33,10 @@ namespace DoAn1_QuanLyThuVien.Models
         {
             items.RemoveAll(s => s.sach.id == id);
         }
-
+        public void RemoveAllItem()
+        {
+            items.Clear();
+        }
         public void Thue_Sach()
         {
             DKyMuonSach muonSach = new DKyMuonSach();

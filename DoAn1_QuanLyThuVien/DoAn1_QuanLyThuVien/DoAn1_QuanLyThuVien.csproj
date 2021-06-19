@@ -159,8 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\MainController.cs" />
-    <Compile Include="Areas\User\Controllers\MainController.cs" />
-    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Controllers\MainUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,9 +229,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\imgsach\1.jpg" />
     <Content Include="Content\imgsach\13.jpg" />
-    <Content Include="Content\imgsach\16.png" />
     <Content Include="Content\imgsach\18.jpg" />
-    <Content Include="Content\imgsach\2.png" />
     <Content Include="Content\imgsach\3.jpg" />
     <Content Include="Content\imgsach\38.jpg" />
     <Content Include="Content\imgsach\4.jpg" />
@@ -241,19 +238,9 @@
     <Content Include="Content\imgsach\6.jpg" />
     <Content Include="Content\imgsach\7.jpg" />
     <Content Include="Content\imgsach\add.png" />
-    <Content Include="Content\imgsach\temple.jpg" />
     <Content Include="Content\img\bg.jpg" />
-    <Content Include="Content\img\book-icon.png" />
-    <Content Include="Content\img\c3803e4814e94502bff9bd0c728c8d8f.png" />
     <Content Include="Content\img\empty-cart.png" />
-    <Content Include="Content\img\Free_Sample_By_Wix %281%29.jfif" />
-    <Content Include="Content\img\HUFLIT_logo %281%29.png" />
-    <Content Include="Content\img\logoHuflit%40.png" />
     <Content Include="Content\img\logoHuflit.png" />
-    <Content Include="Content\img\pexels-stanislav-kondratiev-2908984.jpg" />
-    <Content Include="Content\img\search.png" />
-    <Content Include="Content\img\star-yellow.png" />
-    <Content Include="Content\img\star.png" />
     <Content Include="Content\img\user.png" />
     <Content Include="Content\img\user1.png" />
     <Content Include="Content\PagedList.css" />
@@ -277,7 +264,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Main\DauSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\Index.cshtml" />
@@ -291,11 +277,6 @@
     <Content Include="Areas\Admin\Views\Main\ThemSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\QLMuonTraSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\DSDangKy_MuonSach.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Layout_User_1.cshtml" />
-    <Content Include="Areas\User\Views\Main\Contact.cshtml" />
-    <Content Include="Areas\User\Views\Main\Index.cshtml" />
-    <Content Include="Areas\User\Views\Main\Login.cshtml" />
-    <Content Include="Areas\User\Views\Main\Register.cshtml" />
     <EntityDeploy Include="Models\QuanLyThuVienModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QuanLyThuVienModel.Designer.cs</LastGenOutput>
@@ -307,11 +288,7 @@
     <Content Include="Areas\Admin\Views\Main\BaoCaoTraSach.cshtml" />
     <Content Include="Areas\Admin\Views\Main\BaoCaoTinhTrang.cshtml" />
     <Content Include="Areas\Admin\Views\Main\ThemTheTV.cshtml" />
-    <Content Include="Areas\User\Views\Main\ChiTietSach.cshtml" />
-    <Content Include="Areas\User\Views\Main\Cart.cshtml" />
-    <Content Include="Areas\User\Views\Main\ChangePass.cshtml" />
-    <Content Include="Areas\User\Views\Main\XemThongTinChiTiet.cshtml" />
-    <Content Include="Areas\User\Views\Main\CartNull.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\IMG_scripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -335,13 +312,20 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\MainUser\Cart.cshtml" />
+    <Content Include="Views\MainUser\CartNull.cshtml" />
+    <Content Include="Views\MainUser\ChangePass.cshtml" />
+    <Content Include="Views\MainUser\ChiTietSach.cshtml" />
+    <Content Include="Views\MainUser\Contact.cshtml" />
+    <Content Include="Views\MainUser\Index.cshtml" />
+    <Content Include="Views\MainUser\Login.cshtml" />
+    <Content Include="Views\MainUser\Register.cshtml" />
+    <Content Include="Views\MainUser\XemThongTinChiTiet.cshtml" />
     <Content Include="Views\Shared\_Layout_User_1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\User\Models\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
